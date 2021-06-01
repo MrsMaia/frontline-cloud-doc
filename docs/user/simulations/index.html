@@ -1,0 +1,360 @@
+<!doctype html><html lang=en-us>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="ie=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<link rel=preload as=font href=https://beta.gatling.io/fonts/vendor/jost/jost-v4-latin-regular.woff2 type=font/woff2 crossorigin>
+<link rel=preload as=font href=https://beta.gatling.io/fonts/vendor/jost/jost-v4-latin-700.woff2 type=font/woff2 crossorigin>
+<link rel=stylesheet href=https://beta.gatling.io/main.3107f28c235d14a0f5fea194c9c03fdb859568bd955b6887da7d7b6bbd7cc5aede5b3bace71c81bd7455cf216777d30c10435129b09a0d290ed525cc2118e34e.css integrity="sha512-MQfyjCNdFKD1/qGUycA/24WVaL2VW2iH2n17a718xa7eWzus5xyBvXRVzyFnd9MMEENRKbCaDSkO1SXMIRjjTg==" crossorigin=anonymous>
+<noscript><style>img.lazyload{display:none}</style></noscript>
+<meta name=robots content="index, follow">
+<meta name=googlebot content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name=bingbot content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<title>Simulations - FrontLine Cloud</title>
+<meta name=description content="Learn how to configure and navigate through simulations.">
+<link rel=canonical href=https://beta.gatling.io/docs/user/simulations/>
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://beta.gatling.io/gatling-logo.png">
+<meta name=twitter:title content="Simulations">
+<meta name=twitter:description content="Learn how to configure and navigate through simulations.">
+<meta name=twitter:site content="@GatlingTool">
+<meta name=twitter:creator content="@GatlingTool">
+<meta property="og:title" content="Simulations">
+<meta property="og:description" content="Learn how to configure and navigate through simulations.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://beta.gatling.io/docs/user/simulations/">
+<meta property="og:image" content="https://beta.gatling.io/gatling-logo.png">
+<meta property="article:published_time" content="2021-03-10T09:29:43-05:00">
+<meta property="article:modified_time" content="2021-03-10T09:29:43-05:00">
+<meta property="og:site_name" content="FrontLine Cloud">
+<meta property="article:publisher" content="https://www.facebook.com/GatlingTool">
+<meta property="article:author" content="https://www.facebook.com/GatlingTool">
+<meta property="og:locale" content="en_US">
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https:\/\/beta.gatling.io"},{"@type":"ListItem","position":3,"name":"Docs","item":"https:\/\/beta.gatling.io\/docs\/"},{"@type":"ListItem","position":4,"name":"User","item":"https:\/\/beta.gatling.io\/docs\/user\/"},{"@type":"ListItem","position":5,"name":"Simulations","item":"https:\/\/beta.gatling.io\/docs\/user\/simulations\/"}]}</script>
+<meta name=theme-color content="#fff">
+<link rel=apple-touch-icon sizes=180x180 href=https://beta.gatling.io/apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=https://beta.gatling.io/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=https://beta.gatling.io/favicon-16x16.png>
+<link rel=manifest href=https://beta.gatling.io/site.webmanifest>
+</head>
+<body class="docs single">
+<div class="header-bar fixed-top"></div>
+<header class="navbar fixed-top navbar-expand-md navbar-light">
+<div class=container>
+<input class="menu-btn order-0" type=checkbox id=menu-btn>
+<label class="menu-icon d-md-none" for=menu-btn><span class=navicon></span></label>
+<a class="navbar-brand order-1 order-md-0 me-auto" href=https://beta.gatling.io>FrontLine Cloud</a>
+<button id=mode class="btn btn-link order-2 order-md-4" type=button aria-label="Toggle mode">
+<span class=toggle-dark><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></span>
+<span class=toggle-light><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></span>
+</button>
+<ul class="navbar-nav social-nav order-3 order-md-5">
+<li class=nav-item>
+<a class=nav-link href=https://twitter.com/GatlingTool><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9.0 01-3.14 1.53 4.48 4.48.0 00-7.86 3v1A10.66 10.66.0 013 4s-4 9 5 13a11.64 11.64.0 01-7 2c9 5 20 0 20-11.5a4.5 4.5.0 00-.08-.83A7.72 7.72.0 0023 3z"/></svg><span class="ms-2 visually-hidden">Twitter</span></a>
+</li>
+<li class=nav-item>
+<a class=nav-link href=https://github.com/gatling><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37.0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44.0 0020 4.77 5.07 5.07.0 0019.91 1S18.73.65 16 2.48a13.38 13.38.0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07.0 005 4.77 5.44 5.44.0 003.5 8.55c0 5.42 3.3 6.61 6.44 7A3.37 3.37.0 009 18.13V22"/></svg><span class="ms-2 visually-hidden">GitHub</span></a>
+</li>
+</ul>
+<div class="collapse navbar-collapse order-4 order-md-1">
+<ul class="navbar-nav main-nav me-auto order-5 order-md-2"><li class="nav-item active">
+<a class=nav-link href=https://beta.gatling.io/docs/>Docs</a>
+</li>
+<li class=nav-item>
+<a class=nav-link href=https://beta.gatling.io/tutorials/>Tutorials</a>
+</li>
+</ul>
+<div class="break order-6 d-md-none"></div>
+<form class="navbar-form flex-grow-1 order-7 order-md-3">
+<input id=userinput class="form-control is-search" type=search placeholder="Search docs..." aria-label="Search docs..." autocomplete=off>
+<div id=suggestions class="shadow bg-white rounded"></div>
+</form>
+</div>
+</div>
+</header>
+<div class="wrap container" role=document>
+<div class=content>
+<div class="row flex-xl-nowrap">
+<div class="col-lg-5 col-xl-4 docs-sidebar">
+<nav class=docs-links aria-label="Main navigation">
+<h3>User</h3>
+<ul class=list-unstyled>
+<li><a class=docs-link href=https://beta.gatling.io/docs/user/login/>Login</a></li>
+<li><a class=docs-link href=https://beta.gatling.io/docs/user/overview/>Overview</a></li>
+<li><a class=docs-link href=https://beta.gatling.io/docs/user/profile/>Profile</a></li>
+<li><a class=docs-link href=https://beta.gatling.io/docs/user/artifact_gen/>Artifact Generation</a></li>
+<li><a class=docs-link href=https://beta.gatling.io/docs/user/artifact_conf/>Artifact Configuration</a></li>
+<li><a class="docs-link active" href=https://beta.gatling.io/docs/user/simulations/>Simulations</a></li>
+<li><a class=docs-link href=https://beta.gatling.io/docs/user/trends/>Trends</a></li>
+<li><a class=docs-link href=https://beta.gatling.io/docs/user/reports/>Reports</a></li>
+<li><a class=docs-link href=https://beta.gatling.io/docs/user/api/>Public APIs</a></li>
+<li><a class=docs-link href=https://beta.gatling.io/docs/user/about/>About</a></li>
+<li><a class=docs-link href=https://beta.gatling.io/docs/user/help/>Help</a></li>
+</ul>
+<h3>Administrators</h3>
+<ul class=list-unstyled>
+<li><a class=docs-link href=https://beta.gatling.io/docs/admin/users/>Users</a></li>
+<li><a class=docs-link href=https://beta.gatling.io/docs/admin/teams/>Teams</a></li>
+<li><a class=docs-link href=https://beta.gatling.io/docs/admin/api-tokens/>API Tokens</a></li>
+</ul>
+<h3>Plugins</h3>
+<ul class=list-unstyled>
+<li><a class=docs-link href=https://beta.gatling.io/docs/plugins/jenkins/>Jenkins Plugin</a></li>
+<li><a class=docs-link href=https://beta.gatling.io/docs/plugins/teamcity/>Teamcity Plugin</a></li>
+<li><a class=docs-link href=https://beta.gatling.io/docs/plugins/bamboo/>Bamboo Plugin</a></li>
+<li><a class=docs-link href=https://beta.gatling.io/docs/plugins/script/>Manual scripting</a></li>
+<li><a class=docs-link href=https://beta.gatling.io/docs/plugins/grafana/>Grafana Datasource</a></li>
+</ul>
+</nav>
+</div>
+<nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation">
+<div class=page-links>
+<h3>On this page</h3>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#managing-simulations>Managing Simulations</a></li>
+<li><a href=#global-properties>Global Properties</a></li>
+<li><a href=#creating-a-simulation>Creating a simulation</a>
+<ul>
+<li><a href=#step-1-general>Step 1: General</a></li>
+<li><a href=#step-2-build-configuration>Step 2: Build configuration</a></li>
+<li><a href=#step-3-pools-configuration>Step 3: Pools configuration</a></li>
+<li><a href=#step-4--5-jvm-options--java-system-properties>Step 4 & 5: JVM options & Java System Properties</a></li>
+<li><a href=#step-6-time-window>Step 6: Time window</a></li>
+</ul>
+</li>
+<li><a href=#simulations-table>Simulations table</a></li>
+<li><a href=#useful-tips>Useful tips</a></li>
+</ul>
+</nav>
+</div>
+</nav>
+<main class="docs-content col-lg-11 col-xl-9 mx-xl-auto">
+<h1>Simulations</h1>
+<p class=lead>Navigate through simulations.</p>
+<h2 id=managing-simulations>Managing Simulations<a href=#managing-simulations class=anchor aria-hidden=true>#</a> </h2>
+<p>To access the Simulations section, click on <strong>Simulations</strong> in the navbar.</p>
+<p>The Simulations view contains all the simulations you have configured and the result of their last run.</p>
+<figure>
+<a href=https://beta.gatling.io/docs/user/simulations/images/simulations-table.png>
+<img class="img-fluid lazyload blur-up" data-sizes=auto src=https://beta.gatling.io/docs/user/simulations/images/simulations-table_hu65282dac05809bf17d0e61c146228be9_52726_20x0_resize_box_2.png data-srcset="https://beta.gatling.io/docs/user/simulations/images/simulations-table_hu65282dac05809bf17d0e61c146228be9_52726_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/simulations/images/simulations-table_hu65282dac05809bf17d0e61c146228be9_52726_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/simulations/images/simulations-table_hu65282dac05809bf17d0e61c146228be9_52726_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/simulations/images/simulations-table_hu65282dac05809bf17d0e61c146228be9_52726_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/simulations/images/simulations-table_hu65282dac05809bf17d0e61c146228be9_52726_500x0_resize_box_2.png 500w" width=1904 height=357 alt="Simulation table">
+</a>
+<noscript><img class=img-fluid sizes=100vw srcset="https://beta.gatling.io/docs/user/simulations/images/simulations-table_hu65282dac05809bf17d0e61c146228be9_52726_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/simulations/images/simulations-table_hu65282dac05809bf17d0e61c146228be9_52726_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/simulations/images/simulations-table_hu65282dac05809bf17d0e61c146228be9_52726_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/simulations/images/simulations-table_hu65282dac05809bf17d0e61c146228be9_52726_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/simulations/images/simulations-table_hu65282dac05809bf17d0e61c146228be9_52726_500x0_resize_box_2.png 500w" src=https://beta.gatling.io/docs/user/simulations/images/simulations-table.png width=1904 height=357 alt="Simulation table"></noscript>
+</figure>
+<p>If you don&rsquo;t have any simulations configured yet and don&rsquo;t know how to start, you can download some FrontLine pre-configured projects by clicking on the &ldquo;Download sample simulations&rdquo; green button.</p>
+<figure>
+<a href=https://beta.gatling.io/docs/user/simulations/images/samples.png>
+<img class="img-fluid lazyload blur-up" data-sizes=auto src=https://beta.gatling.io/docs/user/simulations/images/samples_hu1e257cb0fd4771fa917bc49d554599ac_22736_20x0_resize_box_2.png data-srcset="https://beta.gatling.io/docs/user/simulations/images/samples_hu1e257cb0fd4771fa917bc49d554599ac_22736_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/simulations/images/samples_hu1e257cb0fd4771fa917bc49d554599ac_22736_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/simulations/images/samples_hu1e257cb0fd4771fa917bc49d554599ac_22736_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/simulations/images/samples_hu1e257cb0fd4771fa917bc49d554599ac_22736_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/simulations/images/samples_hu1e257cb0fd4771fa917bc49d554599ac_22736_500x0_resize_box_2.png 500w" width=958 height=90 alt=Samples>
+</a>
+<noscript><img class=img-fluid sizes=100vw srcset="https://beta.gatling.io/docs/user/simulations/images/samples_hu1e257cb0fd4771fa917bc49d554599ac_22736_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/simulations/images/samples_hu1e257cb0fd4771fa917bc49d554599ac_22736_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/simulations/images/samples_hu1e257cb0fd4771fa917bc49d554599ac_22736_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/simulations/images/samples_hu1e257cb0fd4771fa917bc49d554599ac_22736_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/simulations/images/samples_hu1e257cb0fd4771fa917bc49d554599ac_22736_500x0_resize_box_2.png 500w" src=https://beta.gatling.io/docs/user/simulations/images/samples.png width=958 height=90 alt=Samples></noscript>
+</figure>
+<p>Those samples are ready to use maven, sbt and gradle projects with proper configuration for FrontLine. You can also download those samples with the download link in the Documentation section.</p>
+<p>Back to the Simulations section, at the top, there is an action bar which allow several actions:</p>
+<ul>
+<li>Create a simulation</li>
+<li>Search by simulation or team name</li>
+<li>Edit global properties</li>
+<li>Delete selected simulations</li>
+</ul>
+<figure>
+<a href=https://beta.gatling.io/docs/user/simulations/images/action-bar.png>
+<img class="img-fluid lazyload blur-up" data-sizes=auto src=https://beta.gatling.io/docs/user/simulations/images/action-bar_hu29f6485d8164ac86f7b2fbdb96357b2b_31543_20x0_resize_box_2.png data-srcset="https://beta.gatling.io/docs/user/simulations/images/action-bar_hu29f6485d8164ac86f7b2fbdb96357b2b_31543_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/simulations/images/action-bar_hu29f6485d8164ac86f7b2fbdb96357b2b_31543_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/simulations/images/action-bar_hu29f6485d8164ac86f7b2fbdb96357b2b_31543_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/simulations/images/action-bar_hu29f6485d8164ac86f7b2fbdb96357b2b_31543_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/simulations/images/action-bar_hu29f6485d8164ac86f7b2fbdb96357b2b_31543_500x0_resize_box_2.png 500w" width=1602 height=216 alt="Action bar">
+</a>
+<noscript><img class=img-fluid sizes=100vw srcset="https://beta.gatling.io/docs/user/simulations/images/action-bar_hu29f6485d8164ac86f7b2fbdb96357b2b_31543_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/simulations/images/action-bar_hu29f6485d8164ac86f7b2fbdb96357b2b_31543_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/simulations/images/action-bar_hu29f6485d8164ac86f7b2fbdb96357b2b_31543_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/simulations/images/action-bar_hu29f6485d8164ac86f7b2fbdb96357b2b_31543_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/simulations/images/action-bar_hu29f6485d8164ac86f7b2fbdb96357b2b_31543_500x0_resize_box_2.png 500w" src=https://beta.gatling.io/docs/user/simulations/images/action-bar.png width=1602 height=216 alt="Action bar"></noscript>
+</figure>
+<h2 id=global-properties>Global Properties<a href=#global-properties class=anchor aria-hidden=true>#</a> </h2>
+<p>Global properties contains every JVM options and system properties used by all of your simulations by default.
+Editing those properties will be propagated to all the simulations.</p>
+<p>If you don&rsquo;t want to use the default properties, check <code>Use custom global properties</code> and enter your own.</p>
+<figure>
+<a href=https://beta.gatling.io/docs/user/simulations/images/properties.png>
+<img class="img-fluid lazyload blur-up" data-sizes=auto src=https://beta.gatling.io/docs/user/simulations/images/properties_hu91ddb7c5b31f6789e3158d2974c585ce_34237_20x0_resize_box_2.png data-srcset="https://beta.gatling.io/docs/user/simulations/images/properties_hu91ddb7c5b31f6789e3158d2974c585ce_34237_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/simulations/images/properties_hu91ddb7c5b31f6789e3158d2974c585ce_34237_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/simulations/images/properties_hu91ddb7c5b31f6789e3158d2974c585ce_34237_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/simulations/images/properties_hu91ddb7c5b31f6789e3158d2974c585ce_34237_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/simulations/images/properties_hu91ddb7c5b31f6789e3158d2974c585ce_34237_500x0_resize_box_2.png 500w" width=694 height=679 alt=Properties>
+</a>
+<noscript><img class=img-fluid sizes=100vw srcset="https://beta.gatling.io/docs/user/simulations/images/properties_hu91ddb7c5b31f6789e3158d2974c585ce_34237_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/simulations/images/properties_hu91ddb7c5b31f6789e3158d2974c585ce_34237_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/simulations/images/properties_hu91ddb7c5b31f6789e3158d2974c585ce_34237_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/simulations/images/properties_hu91ddb7c5b31f6789e3158d2974c585ce_34237_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/simulations/images/properties_hu91ddb7c5b31f6789e3158d2974c585ce_34237_500x0_resize_box_2.png 500w" src=https://beta.gatling.io/docs/user/simulations/images/properties.png width=694 height=679 alt=Properties></noscript>
+</figure>
+<p>If you want specific properties for a simulation, you will be allowed to ignore those properties by checking the <code>Override Global Properties</code> box when creating or editing the simulation:</p>
+<figure>
+<a href=https://beta.gatling.io/docs/user/simulations/images/override.png>
+<img class="img-fluid lazyload blur-up" data-sizes=auto src=https://beta.gatling.io/docs/user/simulations/images/override_hu0e3b929a89818a48362c80238de80da8_26724_20x0_resize_box_2.png data-srcset="https://beta.gatling.io/docs/user/simulations/images/override_hu0e3b929a89818a48362c80238de80da8_26724_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/simulations/images/override_hu0e3b929a89818a48362c80238de80da8_26724_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/simulations/images/override_hu0e3b929a89818a48362c80238de80da8_26724_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/simulations/images/override_hu0e3b929a89818a48362c80238de80da8_26724_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/simulations/images/override_hu0e3b929a89818a48362c80238de80da8_26724_500x0_resize_box_2.png 500w" width=652 height=402 alt=Override>
+</a>
+<noscript><img class=img-fluid sizes=100vw srcset="https://beta.gatling.io/docs/user/simulations/images/override_hu0e3b929a89818a48362c80238de80da8_26724_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/simulations/images/override_hu0e3b929a89818a48362c80238de80da8_26724_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/simulations/images/override_hu0e3b929a89818a48362c80238de80da8_26724_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/simulations/images/override_hu0e3b929a89818a48362c80238de80da8_26724_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/simulations/images/override_hu0e3b929a89818a48362c80238de80da8_26724_500x0_resize_box_2.png 500w" src=https://beta.gatling.io/docs/user/simulations/images/override.png width=652 height=402 alt=Override></noscript>
+</figure>
+<h2 id=creating-a-simulation>Creating a simulation<a href=#creating-a-simulation class=anchor aria-hidden=true>#</a> </h2>
+<div class="alert alert-warning d-flex" role=alert>
+<div class="flex-shrink-1 alert-icon">&#9888;&#xfe0f;</div>
+<div class=w-100>FrontLine has a hard run duration limit of 7 days and will abort any test running for longer than that.
+This limit exists for both performance (data who grow too humongous to be presented in the dashboard) and security (forgotten test running forever) reasons.</div>
+</div>
+<p>In order to create a simulation click on the &ldquo;Create&rdquo; button in the simulations table. There are 6 steps to create a simulation, 3 of which are optional.</p>
+<h3 id=step-1-general>Step 1: General<a href=#step-1-general class=anchor aria-hidden=true>#</a> </h3>
+<figure>
+<a href=https://beta.gatling.io/docs/user/simulations/images/create-simulation1.png>
+<img class="img-fluid lazyload blur-up" data-sizes=auto src=https://beta.gatling.io/docs/user/simulations/images/create-simulation1_hu7e6f71b4d5d84221e151497e80256426_35403_20x0_resize_box_2.png data-srcset="https://beta.gatling.io/docs/user/simulations/images/create-simulation1_hu7e6f71b4d5d84221e151497e80256426_35403_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/simulations/images/create-simulation1_hu7e6f71b4d5d84221e151497e80256426_35403_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/simulations/images/create-simulation1_hu7e6f71b4d5d84221e151497e80256426_35403_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/simulations/images/create-simulation1_hu7e6f71b4d5d84221e151497e80256426_35403_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/simulations/images/create-simulation1_hu7e6f71b4d5d84221e151497e80256426_35403_500x0_resize_box_2.png 500w" width=689 height=486 alt="Create simulation - Step 1">
+</a>
+<noscript><img class=img-fluid sizes=100vw srcset="https://beta.gatling.io/docs/user/simulations/images/create-simulation1_hu7e6f71b4d5d84221e151497e80256426_35403_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/simulations/images/create-simulation1_hu7e6f71b4d5d84221e151497e80256426_35403_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/simulations/images/create-simulation1_hu7e6f71b4d5d84221e151497e80256426_35403_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/simulations/images/create-simulation1_hu7e6f71b4d5d84221e151497e80256426_35403_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/simulations/images/create-simulation1_hu7e6f71b4d5d84221e151497e80256426_35403_500x0_resize_box_2.png 500w" src=https://beta.gatling.io/docs/user/simulations/images/create-simulation1.png width=689 height=486 alt="Create simulation - Step 1"></noscript>
+</figure>
+<ul>
+<li><strong>Name</strong>: the name that will appear on the simulations table.</li>
+<li><strong>Team</strong>: the team which owns the simulation.</li>
+<li><strong>Class name</strong>: the package and the name of your simulation scala class in the project that you want to start.</li>
+</ul>
+<h3 id=step-2-build-configuration>Step 2: Build configuration<a href=#step-2-build-configuration class=anchor aria-hidden=true>#</a> </h3>
+<p>In this step, you&rsquo;ll configure the artifact of the Simulation to execute.</p>
+<figure>
+<a href=https://beta.gatling.io/docs/user/simulations/images/create-simulation2.png>
+<img class="img-fluid lazyload blur-up" data-sizes=auto src=https://beta.gatling.io/docs/user/simulations/images/create-simulation2_hu7542c34ec50c9c51b46ee2e73947a78b_28597_20x0_resize_box_2.png data-srcset="https://beta.gatling.io/docs/user/simulations/images/create-simulation2_hu7542c34ec50c9c51b46ee2e73947a78b_28597_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/simulations/images/create-simulation2_hu7542c34ec50c9c51b46ee2e73947a78b_28597_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/simulations/images/create-simulation2_hu7542c34ec50c9c51b46ee2e73947a78b_28597_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/simulations/images/create-simulation2_hu7542c34ec50c9c51b46ee2e73947a78b_28597_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/simulations/images/create-simulation2_hu7542c34ec50c9c51b46ee2e73947a78b_28597_500x0_resize_box_2.png 500w" width=760 height=338 alt="Create simulation - Step 2">
+</a>
+<noscript><img class=img-fluid sizes=100vw srcset="https://beta.gatling.io/docs/user/simulations/images/create-simulation2_hu7542c34ec50c9c51b46ee2e73947a78b_28597_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/simulations/images/create-simulation2_hu7542c34ec50c9c51b46ee2e73947a78b_28597_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/simulations/images/create-simulation2_hu7542c34ec50c9c51b46ee2e73947a78b_28597_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/simulations/images/create-simulation2_hu7542c34ec50c9c51b46ee2e73947a78b_28597_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/simulations/images/create-simulation2_hu7542c34ec50c9c51b46ee2e73947a78b_28597_500x0_resize_box_2.png 500w" src=https://beta.gatling.io/docs/user/simulations/images/create-simulation2.png width=760 height=338 alt="Create simulation - Step 2"></noscript>
+</figure>
+<h3 id=step-3-pools-configuration>Step 3: Pools configuration<a href=#step-3-pools-configuration class=anchor aria-hidden=true>#</a> </h3>
+<p>In this step, you&rsquo;ll configure the pools used for the FrontLine injectors.</p>
+<p>FrontLine private beta pools are available in the following regions:</p>
+<ul>
+<li>Europe (Paris)</li>
+<li>US East (N. Virginia)</li>
+<li>US West (N. California)</li>
+</ul>
+<figure>
+<a href=https://beta.gatling.io/docs/user/simulations/images/create-simulation3.png>
+<img class="img-fluid lazyload blur-up" data-sizes=auto src=https://beta.gatling.io/docs/user/simulations/images/create-simulation3_hua7688af6f3629b1e53be68fd4b967de2_56404_20x0_resize_box_2.png data-srcset="https://beta.gatling.io/docs/user/simulations/images/create-simulation3_hua7688af6f3629b1e53be68fd4b967de2_56404_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/simulations/images/create-simulation3_hua7688af6f3629b1e53be68fd4b967de2_56404_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/simulations/images/create-simulation3_hua7688af6f3629b1e53be68fd4b967de2_56404_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/simulations/images/create-simulation3_hua7688af6f3629b1e53be68fd4b967de2_56404_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/simulations/images/create-simulation3_hua7688af6f3629b1e53be68fd4b967de2_56404_500x0_resize_box_2.png 500w" width=689 height=510 alt="Create simulation - Step 3">
+</a>
+<noscript><img class=img-fluid sizes=100vw srcset="https://beta.gatling.io/docs/user/simulations/images/create-simulation3_hua7688af6f3629b1e53be68fd4b967de2_56404_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/simulations/images/create-simulation3_hua7688af6f3629b1e53be68fd4b967de2_56404_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/simulations/images/create-simulation3_hua7688af6f3629b1e53be68fd4b967de2_56404_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/simulations/images/create-simulation3_hua7688af6f3629b1e53be68fd4b967de2_56404_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/simulations/images/create-simulation3_hua7688af6f3629b1e53be68fd4b967de2_56404_500x0_resize_box_2.png 500w" src=https://beta.gatling.io/docs/user/simulations/images/create-simulation3.png width=689 height=510 alt="Create simulation - Step 3"></noscript>
+</figure>
+<ul>
+<li><strong>Weight distribution</strong>: on even, every injector will produce the same load. On custom, you have to set the weight in % of each pool (eg the first pool does 20% of the requests, and the second does 80%). The sum of the weight should be 100%.</li>
+<li><strong>Pools</strong>: defines the pools to be used when initiating the FrontLine injectors.</li>
+</ul>
+<p>You can add many pools with a different number of hosts to run your simulation.</p>
+<p>After this step, you can save the simulation, or click on <em>More options</em> to access optional configuration.</p>
+<h3 id=step-4--5-jvm-options--java-system-properties>Step 4 & 5: JVM options & Java System Properties<a href=#step-4--5-jvm-options--java-system-properties class=anchor aria-hidden=true>#</a> </h3>
+<p>These steps allows you to defines JVM arguments and system properties used when running this particular simulation. You can choose to override the global properties.</p>
+<p><figure>
+<a href=https://beta.gatling.io/docs/user/simulations/images/create-simulation4.png>
+<img class="img-fluid lazyload blur-up" data-sizes=auto src=https://beta.gatling.io/docs/user/simulations/images/create-simulation4_hu613f5b116713662ec9ec2c5085a8a051_47315_20x0_resize_box_2.png data-srcset="https://beta.gatling.io/docs/user/simulations/images/create-simulation4_hu613f5b116713662ec9ec2c5085a8a051_47315_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/simulations/images/create-simulation4_hu613f5b116713662ec9ec2c5085a8a051_47315_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/simulations/images/create-simulation4_hu613f5b116713662ec9ec2c5085a8a051_47315_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/simulations/images/create-simulation4_hu613f5b116713662ec9ec2c5085a8a051_47315_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/simulations/images/create-simulation4_hu613f5b116713662ec9ec2c5085a8a051_47315_500x0_resize_box_2.png 500w" width=686 height=607 alt="Create simulation - Step 4">
+</a>
+<noscript><img class=img-fluid sizes=100vw srcset="https://beta.gatling.io/docs/user/simulations/images/create-simulation4_hu613f5b116713662ec9ec2c5085a8a051_47315_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/simulations/images/create-simulation4_hu613f5b116713662ec9ec2c5085a8a051_47315_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/simulations/images/create-simulation4_hu613f5b116713662ec9ec2c5085a8a051_47315_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/simulations/images/create-simulation4_hu613f5b116713662ec9ec2c5085a8a051_47315_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/simulations/images/create-simulation4_hu613f5b116713662ec9ec2c5085a8a051_47315_500x0_resize_box_2.png 500w" src=https://beta.gatling.io/docs/user/simulations/images/create-simulation4.png width=686 height=607 alt="Create simulation - Step 4"></noscript>
+</figure>
+<figure>
+<a href=https://beta.gatling.io/docs/user/simulations/images/create-simulation5.png>
+<img class="img-fluid lazyload blur-up" data-sizes=auto src=https://beta.gatling.io/docs/user/simulations/images/create-simulation5_hu5e70dd8f2d315306e0e93ab91e2e29d2_33499_20x0_resize_box_2.png data-srcset="https://beta.gatling.io/docs/user/simulations/images/create-simulation5_hu5e70dd8f2d315306e0e93ab91e2e29d2_33499_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/simulations/images/create-simulation5_hu5e70dd8f2d315306e0e93ab91e2e29d2_33499_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/simulations/images/create-simulation5_hu5e70dd8f2d315306e0e93ab91e2e29d2_33499_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/simulations/images/create-simulation5_hu5e70dd8f2d315306e0e93ab91e2e29d2_33499_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/simulations/images/create-simulation5_hu5e70dd8f2d315306e0e93ab91e2e29d2_33499_500x0_resize_box_2.png 500w" width=696 height=484 alt="Create simulation - Step 5">
+</a>
+<noscript><img class=img-fluid sizes=100vw srcset="https://beta.gatling.io/docs/user/simulations/images/create-simulation5_hu5e70dd8f2d315306e0e93ab91e2e29d2_33499_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/simulations/images/create-simulation5_hu5e70dd8f2d315306e0e93ab91e2e29d2_33499_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/simulations/images/create-simulation5_hu5e70dd8f2d315306e0e93ab91e2e29d2_33499_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/simulations/images/create-simulation5_hu5e70dd8f2d315306e0e93ab91e2e29d2_33499_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/simulations/images/create-simulation5_hu5e70dd8f2d315306e0e93ab91e2e29d2_33499_500x0_resize_box_2.png 500w" src=https://beta.gatling.io/docs/user/simulations/images/create-simulation5.png width=696 height=484 alt="Create simulation - Step 5"></noscript>
+</figure>
+</p>
+<div class="alert alert-tip d-flex" role=alert>
+<div class="flex-shrink-1 alert-icon">&#x1f4a1;</div>
+<div class=w-100>JVM options and Java System Properties will be saved in a snapshot that will be available in the run. This information will be visible by anyone who has read access.
+You can exclude some properties from being copied if you prefix them with <code>sensitive.</code>.</div>
+</div>
+<div class="alert alert-tip d-flex" role=alert>
+<div class="flex-shrink-1 alert-icon">&#x1f4a1;</div>
+<div class=w-100>You can configure the <code>gatling.frontline.groupedDomains</code> System property to group connection stats from multiple subdomains and avoid memory issues when hitting a very large number of subdomains.
+For example, setting this property as <code>.foo.com, .bar.com</code> will consolidate stats for <code>sub1.foo.com</code>, <code>sub2.foo.com</code>, <code>sub1.bar.com</code>, <code>sub2.bar.com</code> into <code>*****.foo.com</code> and <code>*****.bar.com</code>.</div>
+</div>
+<h3 id=step-6-time-window>Step 6: Time window<a href=#step-6-time-window class=anchor aria-hidden=true>#</a> </h3>
+<p>Configuring a ramp up or ramp down means that the start and end of your simulation won&rsquo;t be used for calculating metrics and assertions.</p>
+<figure>
+<a href=https://beta.gatling.io/docs/user/simulations/images/create-simulation6.png>
+<img class="img-fluid lazyload blur-up" data-sizes=auto src=https://beta.gatling.io/docs/user/simulations/images/create-simulation6_hu23f2a3bcca0ff1ccfd5111ddd67ec66e_28960_20x0_resize_box_2.png data-srcset="https://beta.gatling.io/docs/user/simulations/images/create-simulation6_hu23f2a3bcca0ff1ccfd5111ddd67ec66e_28960_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/simulations/images/create-simulation6_hu23f2a3bcca0ff1ccfd5111ddd67ec66e_28960_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/simulations/images/create-simulation6_hu23f2a3bcca0ff1ccfd5111ddd67ec66e_28960_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/simulations/images/create-simulation6_hu23f2a3bcca0ff1ccfd5111ddd67ec66e_28960_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/simulations/images/create-simulation6_hu23f2a3bcca0ff1ccfd5111ddd67ec66e_28960_500x0_resize_box_2.png 500w" width=696 height=436 alt="Create simulation - Step 6">
+</a>
+<noscript><img class=img-fluid sizes=100vw srcset="https://beta.gatling.io/docs/user/simulations/images/create-simulation6_hu23f2a3bcca0ff1ccfd5111ddd67ec66e_28960_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/simulations/images/create-simulation6_hu23f2a3bcca0ff1ccfd5111ddd67ec66e_28960_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/simulations/images/create-simulation6_hu23f2a3bcca0ff1ccfd5111ddd67ec66e_28960_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/simulations/images/create-simulation6_hu23f2a3bcca0ff1ccfd5111ddd67ec66e_28960_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/simulations/images/create-simulation6_hu23f2a3bcca0ff1ccfd5111ddd67ec66e_28960_500x0_resize_box_2.png 500w" src=https://beta.gatling.io/docs/user/simulations/images/create-simulation6.png width=696 height=436 alt="Create simulation - Step 6"></noscript>
+</figure>
+<ul>
+<li><strong>Ramp Up</strong>: the number of seconds you want to exclude at the beginning of the run.</li>
+<li><strong>Ramp Down</strong>: the number of seconds you want to exclude at the end of the run.</li>
+</ul>
+<div class="alert alert-tip d-flex" role=alert>
+<div class="flex-shrink-1 alert-icon">&#x1f4a1;</div>
+<div class=w-100>Ramps parameters will only be applied if the run duration is longer than the sum of the two.</div>
+</div>
+<h2 id=simulations-table>Simulations table<a href=#simulations-table class=anchor aria-hidden=true>#</a> </h2>
+<p>Now that you have created a simulation, you can start it by clicking on the <i class="fas fa-play"></i>
+icon in the <strong>Start</strong> column of the table.</p>
+<figure>
+<a href=https://beta.gatling.io/docs/user/simulations/images/start.png>
+<img class="img-fluid lazyload blur-up" data-sizes=auto src=https://beta.gatling.io/docs/user/simulations/images/start_hue03e783f8930e7ee039135f1b6ecabe4_21178_20x0_resize_box_2.png data-srcset="https://beta.gatling.io/docs/user/simulations/images/start_hue03e783f8930e7ee039135f1b6ecabe4_21178_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/simulations/images/start_hue03e783f8930e7ee039135f1b6ecabe4_21178_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/simulations/images/start_hue03e783f8930e7ee039135f1b6ecabe4_21178_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/simulations/images/start_hue03e783f8930e7ee039135f1b6ecabe4_21178_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/simulations/images/start_hue03e783f8930e7ee039135f1b6ecabe4_21178_500x0_resize_box_2.png 500w" width=1577 height=96 alt=Start>
+</a>
+<noscript><img class=img-fluid sizes=100vw srcset="https://beta.gatling.io/docs/user/simulations/images/start_hue03e783f8930e7ee039135f1b6ecabe4_21178_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/simulations/images/start_hue03e783f8930e7ee039135f1b6ecabe4_21178_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/simulations/images/start_hue03e783f8930e7ee039135f1b6ecabe4_21178_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/simulations/images/start_hue03e783f8930e7ee039135f1b6ecabe4_21178_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/simulations/images/start_hue03e783f8930e7ee039135f1b6ecabe4_21178_500x0_resize_box_2.png 500w" src=https://beta.gatling.io/docs/user/simulations/images/start.png width=1577 height=96 alt=Start></noscript>
+</figure>
+<p>A run have the following life cycle:</p>
+<ul>
+<li><strong>Building</strong>: in which it will download the simulation artifact and prepare the hosts</li>
+<li><strong>Deploying</strong>: in which it will deploy the simulation to run on all the hosts</li>
+<li><strong>Injecting</strong>: in which the simulation is running and viewable from the Reports</li>
+</ul>
+<figure>
+<a href=https://beta.gatling.io/docs/user/simulations/images/injecting.png>
+<img class="img-fluid lazyload blur-up" data-sizes=auto src=https://beta.gatling.io/docs/user/simulations/images/injecting_hud816ae149342aadf6ff27054c18f85c9_22562_20x0_resize_box_2.png data-srcset="https://beta.gatling.io/docs/user/simulations/images/injecting_hud816ae149342aadf6ff27054c18f85c9_22562_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/simulations/images/injecting_hud816ae149342aadf6ff27054c18f85c9_22562_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/simulations/images/injecting_hud816ae149342aadf6ff27054c18f85c9_22562_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/simulations/images/injecting_hud816ae149342aadf6ff27054c18f85c9_22562_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/simulations/images/injecting_hud816ae149342aadf6ff27054c18f85c9_22562_500x0_resize_box_2.png 500w" width=1579 height=96 alt=Injecting>
+</a>
+<noscript><img class=img-fluid sizes=100vw srcset="https://beta.gatling.io/docs/user/simulations/images/injecting_hud816ae149342aadf6ff27054c18f85c9_22562_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/simulations/images/injecting_hud816ae149342aadf6ff27054c18f85c9_22562_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/simulations/images/injecting_hud816ae149342aadf6ff27054c18f85c9_22562_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/simulations/images/injecting_hud816ae149342aadf6ff27054c18f85c9_22562_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/simulations/images/injecting_hud816ae149342aadf6ff27054c18f85c9_22562_500x0_resize_box_2.png 500w" src=https://beta.gatling.io/docs/user/simulations/images/injecting.png width=1579 height=96 alt=Injecting></noscript>
+</figure>
+<div id=logs class=anchor></div>
+<p>By clicking on the <i class="fas fa-file-alt"></i>
+icon in the <strong>Build Start</strong> column, Frontline will display the build logs of the simulation. There is a limit of 1000 logs for a run.</p>
+<figure>
+<a href=https://beta.gatling.io/docs/user/simulations/images/logs.png>
+<img class="img-fluid lazyload blur-up" data-sizes=auto src=https://beta.gatling.io/docs/user/simulations/images/logs_hu9f8ba45157010d98ca75e13cfa5c57ef_2246303_20x0_resize_box_2.png data-srcset="https://beta.gatling.io/docs/user/simulations/images/logs_hu9f8ba45157010d98ca75e13cfa5c57ef_2246303_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/simulations/images/logs_hu9f8ba45157010d98ca75e13cfa5c57ef_2246303_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/simulations/images/logs_hu9f8ba45157010d98ca75e13cfa5c57ef_2246303_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/simulations/images/logs_hu9f8ba45157010d98ca75e13cfa5c57ef_2246303_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/simulations/images/logs_hu9f8ba45157010d98ca75e13cfa5c57ef_2246303_500x0_resize_box_2.png 500w" width=1894 height=1358 alt=Logs>
+</a>
+<noscript><img class=img-fluid sizes=100vw srcset="https://beta.gatling.io/docs/user/simulations/images/logs_hu9f8ba45157010d98ca75e13cfa5c57ef_2246303_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/simulations/images/logs_hu9f8ba45157010d98ca75e13cfa5c57ef_2246303_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/simulations/images/logs_hu9f8ba45157010d98ca75e13cfa5c57ef_2246303_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/simulations/images/logs_hu9f8ba45157010d98ca75e13cfa5c57ef_2246303_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/simulations/images/logs_hu9f8ba45157010d98ca75e13cfa5c57ef_2246303_500x0_resize_box_2.png 500w" src=https://beta.gatling.io/docs/user/simulations/images/logs.png width=1894 height=1358 alt=Logs></noscript>
+</figure>
+<p>You can click on the <i class="fas fa-search"></i>
+icon next to the status (if there is one) to display the assertions of the run.
+Assertions are the assumptions made at the beginning of the simulation to be verified at the end:</p>
+<figure>
+<a href=https://beta.gatling.io/docs/user/simulations/images/assertions.png>
+<img class="img-fluid lazyload blur-up" data-sizes=auto src=https://beta.gatling.io/docs/user/simulations/images/assertions_hub43943d12c65e3bf1f6b1e8f10fbe529_65749_20x0_resize_box_2.png data-srcset="https://beta.gatling.io/docs/user/simulations/images/assertions_hub43943d12c65e3bf1f6b1e8f10fbe529_65749_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/simulations/images/assertions_hub43943d12c65e3bf1f6b1e8f10fbe529_65749_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/simulations/images/assertions_hub43943d12c65e3bf1f6b1e8f10fbe529_65749_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/simulations/images/assertions_hub43943d12c65e3bf1f6b1e8f10fbe529_65749_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/simulations/images/assertions_hub43943d12c65e3bf1f6b1e8f10fbe529_65749_500x0_resize_box_2.png 500w" width=1090 height=254 alt=Assertions>
+</a>
+<noscript><img class=img-fluid sizes=100vw srcset="https://beta.gatling.io/docs/user/simulations/images/assertions_hub43943d12c65e3bf1f6b1e8f10fbe529_65749_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/simulations/images/assertions_hub43943d12c65e3bf1f6b1e8f10fbe529_65749_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/simulations/images/assertions_hub43943d12c65e3bf1f6b1e8f10fbe529_65749_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/simulations/images/assertions_hub43943d12c65e3bf1f6b1e8f10fbe529_65749_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/simulations/images/assertions_hub43943d12c65e3bf1f6b1e8f10fbe529_65749_500x0_resize_box_2.png 500w" src=https://beta.gatling.io/docs/user/simulations/images/assertions.png width=1090 height=254 alt=Assertions></noscript>
+</figure>
+<h2 id=useful-tips>Useful tips<a href=#useful-tips class=anchor aria-hidden=true>#</a> </h2>
+<ul>
+<li>You can edit the simulation by clicking on the <i class="fas fa-pencil-alt"></i>
+icon next to his name</li>
+<li>You can search a simulation by his name, or its team name</li>
+<li>You can sort the simulations by any column except the <strong>Start</strong> one</li>
+<li>A <strong>Delete</strong> button will appear on the action bar when you select a simulation, you will be able to delete all the selected simulations</li>
+<li>When a simulation is running, you can abort the run by clicking on the Abort button</li>
+<li>You can copy a simulation ID by clicking on the <i class="fas fa-clipboard"></i>
+icon next to his name</li>
+</ul>
+<p>Be aware that deleting a simulation will delete all the associated runs.</p>
+<p class=edit-page><a href=https://github.com/gatling/frontline-cloud-doc/blob/main/content/docs/user/simulations/index.md><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-2"><path d="M17 3a2.828 2.828.0 114 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg>Edit this page on GitHub</a></p>
+<div class="docs-navigation d-flex justify-content-between">
+<a href=https://beta.gatling.io/docs/user/artifact_conf/>
+<div class="card my-1">
+<div class="card-body py-2">
+&larr; Artifact Configuration
+</div>
+</div>
+</a>
+<a class=ms-auto href=https://beta.gatling.io/docs/user/trends/>
+<div class="card my-1">
+<div class="card-body py-2">
+Trends &rarr;
+</div>
+</div>
+</a>
+</div>
+</main>
+</div>
+</div>
+</div>
+<footer class="footer text-muted">
+<div class=container>
+<div class=row>
+<div class="col-lg-8 order-last order-lg-first">
+<ul class=list-inline>
+<li class=list-inline-item>Powered by <a href=https://gohugo.io/>Hugo</a>, and <a href=https://getdoks.org/>Doks</a></li>
+</ul>
+</div>
+<div class="col-lg-8 order-first order-lg-last text-lg-end">
+<ul class=list-inline>
+</ul>
+</div>
+</div>
+</div>
+</footer>
+<script src=https://beta.gatling.io/main.min.208c3b7c67e3d3080c9bc3050c47ee38a15be3ce9a0572fe4c715b0bbd66401474ab787ed4edf2cc0e33bf6c673f9ba13d42224094560e40807767016fcc2deb.js integrity="sha512-IIw7fGfj0wgMm8MFDEfuOKFb486aBXL+THFbC71mQBR0q3h+1O3yzA4zv2xnP5uhPUIiQJRWDkCAd2cBb8wt6w==" crossorigin=anonymous defer></script>
+<script src=https://beta.gatling.io/index.min.afb0e63d0c6a8c50883448405d7d099d2326f9541904c91670fbd00bb508e18e0f28cc3ba1ff73aabd19cce79f1cb8691918c6622b7ce53d45e10de5f50cdffa.js integrity="sha512-r7DmPQxqjFCINEhAXX0JnSMm+VQZBMkWcPvQC7UI4Y4PKMw7of9zqr0ZzOefHLhpGRjGYit85T1F4Q3l9Qzf+g==" crossorigin=anonymous defer></script>
+</body>
+</html>

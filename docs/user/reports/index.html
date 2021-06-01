@@ -1,0 +1,442 @@
+<!doctype html><html lang=en-us>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="ie=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<link rel=preload as=font href=https://beta.gatling.io/fonts/vendor/jost/jost-v4-latin-regular.woff2 type=font/woff2 crossorigin>
+<link rel=preload as=font href=https://beta.gatling.io/fonts/vendor/jost/jost-v4-latin-700.woff2 type=font/woff2 crossorigin>
+<link rel=stylesheet href=https://beta.gatling.io/main.3107f28c235d14a0f5fea194c9c03fdb859568bd955b6887da7d7b6bbd7cc5aede5b3bace71c81bd7455cf216777d30c10435129b09a0d290ed525cc2118e34e.css integrity="sha512-MQfyjCNdFKD1/qGUycA/24WVaL2VW2iH2n17a718xa7eWzus5xyBvXRVzyFnd9MMEENRKbCaDSkO1SXMIRjjTg==" crossorigin=anonymous>
+<noscript><style>img.lazyload{display:none}</style></noscript>
+<meta name=robots content="index, follow">
+<meta name=googlebot content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name=bingbot content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<title>Reports - FrontLine Cloud</title>
+<meta name=description content="Learn how to analyze test reports.">
+<link rel=canonical href=https://beta.gatling.io/docs/user/reports/>
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://beta.gatling.io/gatling-logo.png">
+<meta name=twitter:title content="Reports">
+<meta name=twitter:description content="Learn how to analyze test reports.">
+<meta name=twitter:site content="@GatlingTool">
+<meta name=twitter:creator content="@GatlingTool">
+<meta property="og:title" content="Reports">
+<meta property="og:description" content="Learn how to analyze test reports.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://beta.gatling.io/docs/user/reports/">
+<meta property="og:image" content="https://beta.gatling.io/gatling-logo.png">
+<meta property="article:published_time" content="2021-03-10T09:29:43-05:00">
+<meta property="article:modified_time" content="2021-03-10T09:29:43-05:00">
+<meta property="og:site_name" content="FrontLine Cloud">
+<meta property="article:publisher" content="https://www.facebook.com/GatlingTool">
+<meta property="article:author" content="https://www.facebook.com/GatlingTool">
+<meta property="og:locale" content="en_US">
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https:\/\/beta.gatling.io"},{"@type":"ListItem","position":3,"name":"Docs","item":"https:\/\/beta.gatling.io\/docs\/"},{"@type":"ListItem","position":4,"name":"User","item":"https:\/\/beta.gatling.io\/docs\/user\/"},{"@type":"ListItem","position":5,"name":"Reports","item":"https:\/\/beta.gatling.io\/docs\/user\/reports\/"}]}</script>
+<meta name=theme-color content="#fff">
+<link rel=apple-touch-icon sizes=180x180 href=https://beta.gatling.io/apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=https://beta.gatling.io/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=https://beta.gatling.io/favicon-16x16.png>
+<link rel=manifest href=https://beta.gatling.io/site.webmanifest>
+</head>
+<body class="docs single">
+<div class="header-bar fixed-top"></div>
+<header class="navbar fixed-top navbar-expand-md navbar-light">
+<div class=container>
+<input class="menu-btn order-0" type=checkbox id=menu-btn>
+<label class="menu-icon d-md-none" for=menu-btn><span class=navicon></span></label>
+<a class="navbar-brand order-1 order-md-0 me-auto" href=https://beta.gatling.io>FrontLine Cloud</a>
+<button id=mode class="btn btn-link order-2 order-md-4" type=button aria-label="Toggle mode">
+<span class=toggle-dark><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></span>
+<span class=toggle-light><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></span>
+</button>
+<ul class="navbar-nav social-nav order-3 order-md-5">
+<li class=nav-item>
+<a class=nav-link href=https://twitter.com/GatlingTool><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9.0 01-3.14 1.53 4.48 4.48.0 00-7.86 3v1A10.66 10.66.0 013 4s-4 9 5 13a11.64 11.64.0 01-7 2c9 5 20 0 20-11.5a4.5 4.5.0 00-.08-.83A7.72 7.72.0 0023 3z"/></svg><span class="ms-2 visually-hidden">Twitter</span></a>
+</li>
+<li class=nav-item>
+<a class=nav-link href=https://github.com/gatling><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37.0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44.0 0020 4.77 5.07 5.07.0 0019.91 1S18.73.65 16 2.48a13.38 13.38.0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07.0 005 4.77 5.44 5.44.0 003.5 8.55c0 5.42 3.3 6.61 6.44 7A3.37 3.37.0 009 18.13V22"/></svg><span class="ms-2 visually-hidden">GitHub</span></a>
+</li>
+</ul>
+<div class="collapse navbar-collapse order-4 order-md-1">
+<ul class="navbar-nav main-nav me-auto order-5 order-md-2"><li class="nav-item active">
+<a class=nav-link href=https://beta.gatling.io/docs/>Docs</a>
+</li>
+<li class=nav-item>
+<a class=nav-link href=https://beta.gatling.io/tutorials/>Tutorials</a>
+</li>
+</ul>
+<div class="break order-6 d-md-none"></div>
+<form class="navbar-form flex-grow-1 order-7 order-md-3">
+<input id=userinput class="form-control is-search" type=search placeholder="Search docs..." aria-label="Search docs..." autocomplete=off>
+<div id=suggestions class="shadow bg-white rounded"></div>
+</form>
+</div>
+</div>
+</header>
+<div class="wrap container" role=document>
+<div class=content>
+<div class="row flex-xl-nowrap">
+<div class="col-lg-5 col-xl-4 docs-sidebar">
+<nav class=docs-links aria-label="Main navigation">
+<h3>User</h3>
+<ul class=list-unstyled>
+<li><a class=docs-link href=https://beta.gatling.io/docs/user/login/>Login</a></li>
+<li><a class=docs-link href=https://beta.gatling.io/docs/user/overview/>Overview</a></li>
+<li><a class=docs-link href=https://beta.gatling.io/docs/user/profile/>Profile</a></li>
+<li><a class=docs-link href=https://beta.gatling.io/docs/user/artifact_gen/>Artifact Generation</a></li>
+<li><a class=docs-link href=https://beta.gatling.io/docs/user/artifact_conf/>Artifact Configuration</a></li>
+<li><a class=docs-link href=https://beta.gatling.io/docs/user/simulations/>Simulations</a></li>
+<li><a class=docs-link href=https://beta.gatling.io/docs/user/trends/>Trends</a></li>
+<li><a class="docs-link active" href=https://beta.gatling.io/docs/user/reports/>Reports</a></li>
+<li><a class=docs-link href=https://beta.gatling.io/docs/user/api/>Public APIs</a></li>
+<li><a class=docs-link href=https://beta.gatling.io/docs/user/about/>About</a></li>
+<li><a class=docs-link href=https://beta.gatling.io/docs/user/help/>Help</a></li>
+</ul>
+<h3>Administrators</h3>
+<ul class=list-unstyled>
+<li><a class=docs-link href=https://beta.gatling.io/docs/admin/users/>Users</a></li>
+<li><a class=docs-link href=https://beta.gatling.io/docs/admin/teams/>Teams</a></li>
+<li><a class=docs-link href=https://beta.gatling.io/docs/admin/api-tokens/>API Tokens</a></li>
+</ul>
+<h3>Plugins</h3>
+<ul class=list-unstyled>
+<li><a class=docs-link href=https://beta.gatling.io/docs/plugins/jenkins/>Jenkins Plugin</a></li>
+<li><a class=docs-link href=https://beta.gatling.io/docs/plugins/teamcity/>Teamcity Plugin</a></li>
+<li><a class=docs-link href=https://beta.gatling.io/docs/plugins/bamboo/>Bamboo Plugin</a></li>
+<li><a class=docs-link href=https://beta.gatling.io/docs/plugins/script/>Manual scripting</a></li>
+<li><a class=docs-link href=https://beta.gatling.io/docs/plugins/grafana/>Grafana Datasource</a></li>
+</ul>
+</nav>
+</div>
+<nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation">
+<div class=page-links>
+<h3>On this page</h3>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#reports>Reports</a>
+<ul>
+<li><a href=#top-navigation-bar>Top Navigation Bar</a></li>
+<li><a href=#timeline>Timeline</a></li>
+<li><a href=#assertions>Assertions</a></li>
+<li><a href=#tabs>Tabs</a></li>
+<li><a href=#run-bar>Run Bar</a></li>
+<li><a href=#generate-public-links>Generate Public Links</a></li>
+<li><a href=#charts>Charts</a></li>
+<li><a href=#summary-requests-and-groups-only>Summary (Requests and Groups only)</a></li>
+<li><a href=#export-pdf>Export PDF</a></li>
+<li><a href=#useful-tips>Useful Tips</a></li>
+<li><a href=#zoom>Zoom</a></li>
+<li><a href=#markers>Markers</a></li>
+<li><a href=#multiple-highlights>Multiple Highlights</a></li>
+<li><a href=#percentiles-mask>Percentiles Mask</a></li>
+<li><a href=#date-time--elapsed-time>Date Time / Elapsed Time</a></li>
+<li><a href=#highlight-legend>Highlight Legend</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</nav>
+<main class="docs-content col-lg-11 col-xl-9 mx-xl-auto">
+<h1>Reports</h1>
+<p class=lead>Analyze reports.</p>
+<h2 id=reports>Reports<a href=#reports class=anchor aria-hidden=true>#</a> </h2>
+<p>The reports can be accessed by clicking on the <i class="fas fa-chart-area"></i>
+icon in the <a href=#simulations-table>simulations table</a> or in the <a href=#runs-table>runs table</a>.</p>
+<p>This view introduce all the metrics available for a specific run.
+This page consists of:</p>
+<ul>
+<li><a href=#top-navigation-bar>The top navigation bar</a></li>
+<li><a href=#timeline>The timeline</a></li>
+<li><a href=#tabs>Tabs</a></li>
+<li><a href=#run-bar>The run bar</a></li>
+<li><a href=#charts>Charts area</a></li>
+<li><a href=#summary-requests-and-groups-only>The summary</a> (only for requests and groups tabs)</li>
+<li><a href=#export-pdf>Export PDF</a></li>
+</ul>
+<figure>
+<a href=https://beta.gatling.io/docs/user/reports/images/reports.png>
+<img class="img-fluid lazyload blur-up" data-sizes=auto src=https://beta.gatling.io/docs/user/reports/images/reports_huec1bf2502ccb4c17e1ccd04dea81a6b4_367299_20x0_resize_box_2.png data-srcset="https://beta.gatling.io/docs/user/reports/images/reports_huec1bf2502ccb4c17e1ccd04dea81a6b4_367299_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/reports/images/reports_huec1bf2502ccb4c17e1ccd04dea81a6b4_367299_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/reports/images/reports_huec1bf2502ccb4c17e1ccd04dea81a6b4_367299_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/reports/images/reports_huec1bf2502ccb4c17e1ccd04dea81a6b4_367299_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/reports/images/reports_huec1bf2502ccb4c17e1ccd04dea81a6b4_367299_500x0_resize_box_2.png 500w" width=2222 height=1228 alt=Reports>
+</a>
+<noscript><img class=img-fluid sizes=100vw srcset="https://beta.gatling.io/docs/user/reports/images/reports_huec1bf2502ccb4c17e1ccd04dea81a6b4_367299_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/reports/images/reports_huec1bf2502ccb4c17e1ccd04dea81a6b4_367299_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/reports/images/reports_huec1bf2502ccb4c17e1ccd04dea81a6b4_367299_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/reports/images/reports_huec1bf2502ccb4c17e1ccd04dea81a6b4_367299_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/reports/images/reports_huec1bf2502ccb4c17e1ccd04dea81a6b4_367299_500x0_resize_box_2.png 500w" src=https://beta.gatling.io/docs/user/reports/images/reports.png width=2222 height=1228 alt=Reports></noscript>
+</figure>
+<h3 id=top-navigation-bar>Top Navigation Bar<a href=#top-navigation-bar class=anchor aria-hidden=true>#</a> </h3>
+<p>The navigation bar enable you to choose the simulation time range.</p>
+<figure>
+<a href=https://beta.gatling.io/docs/user/reports/images/timewindow.png>
+<img class="img-fluid lazyload blur-up" data-sizes=auto src=https://beta.gatling.io/docs/user/reports/images/timewindow_hu2b1d45a86f6ea0153883b30e9f29a225_22242_20x0_resize_box_2.png data-srcset="https://beta.gatling.io/docs/user/reports/images/timewindow_hu2b1d45a86f6ea0153883b30e9f29a225_22242_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/reports/images/timewindow_hu2b1d45a86f6ea0153883b30e9f29a225_22242_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/reports/images/timewindow_hu2b1d45a86f6ea0153883b30e9f29a225_22242_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/reports/images/timewindow_hu2b1d45a86f6ea0153883b30e9f29a225_22242_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/reports/images/timewindow_hu2b1d45a86f6ea0153883b30e9f29a225_22242_500x0_resize_box_2.png 500w" width=504 height=302 alt=Timewindow>
+</a>
+<noscript><img class=img-fluid sizes=100vw srcset="https://beta.gatling.io/docs/user/reports/images/timewindow_hu2b1d45a86f6ea0153883b30e9f29a225_22242_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/reports/images/timewindow_hu2b1d45a86f6ea0153883b30e9f29a225_22242_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/reports/images/timewindow_hu2b1d45a86f6ea0153883b30e9f29a225_22242_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/reports/images/timewindow_hu2b1d45a86f6ea0153883b30e9f29a225_22242_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/reports/images/timewindow_hu2b1d45a86f6ea0153883b30e9f29a225_22242_500x0_resize_box_2.png 500w" src=https://beta.gatling.io/docs/user/reports/images/timewindow.png width=504 height=302 alt=Timewindow></noscript>
+</figure>
+<h3 id=timeline>Timeline<a href=#timeline class=anchor aria-hidden=true>#</a> </h3>
+<p>The timeline contains metrics of the full run providing an overview of the run.
+Global information are available such as the resolution and the simulation name.</p>
+<p>The resolution indicates the number of seconds per data point in the graph.</p>
+<p>You can change the time range with control buttons or by selecting a region on the timeline:</p>
+<figure>
+<a href=https://beta.gatling.io/docs/user/reports/images/timeline.png>
+<img class="img-fluid lazyload blur-up" data-sizes=auto src=https://beta.gatling.io/docs/user/reports/images/timeline_hu8df7caa9905269e473ded49df094a6d9_51047_20x0_resize_box_2.png data-srcset="https://beta.gatling.io/docs/user/reports/images/timeline_hu8df7caa9905269e473ded49df094a6d9_51047_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/reports/images/timeline_hu8df7caa9905269e473ded49df094a6d9_51047_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/reports/images/timeline_hu8df7caa9905269e473ded49df094a6d9_51047_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/reports/images/timeline_hu8df7caa9905269e473ded49df094a6d9_51047_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/reports/images/timeline_hu8df7caa9905269e473ded49df094a6d9_51047_500x0_resize_box_2.png 500w" width=1804 height=204 alt=Timeline>
+</a>
+<noscript><img class=img-fluid sizes=100vw srcset="https://beta.gatling.io/docs/user/reports/images/timeline_hu8df7caa9905269e473ded49df094a6d9_51047_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/reports/images/timeline_hu8df7caa9905269e473ded49df094a6d9_51047_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/reports/images/timeline_hu8df7caa9905269e473ded49df094a6d9_51047_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/reports/images/timeline_hu8df7caa9905269e473ded49df094a6d9_51047_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/reports/images/timeline_hu8df7caa9905269e473ded49df094a6d9_51047_500x0_resize_box_2.png 500w" src=https://beta.gatling.io/docs/user/reports/images/timeline.png width=1804 height=204 alt=Timeline></noscript>
+</figure>
+<h3 id=assertions>Assertions<a href=#assertions class=anchor aria-hidden=true>#</a> </h3>
+<p>The label below is used to display the status of the simulation (Ongoing, successful, timeout&mldr;).
+If your simulation has assertions, this label will be clickable to show the assertions results.
+You can comment the run run by clicking on the <i class="fas fa-comment-alt"></i>
+icon.</p>
+<figure>
+<a href=https://beta.gatling.io/docs/user/reports/images/timeline-assertions.png>
+<img class="img-fluid lazyload blur-up" data-sizes=auto src=https://beta.gatling.io/docs/user/reports/images/timeline-assertions_hu74886702b74109e0e47570a13776a29d_11763_20x0_resize_box_2.png data-srcset="https://beta.gatling.io/docs/user/reports/images/timeline-assertions_hu74886702b74109e0e47570a13776a29d_11763_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/reports/images/timeline-assertions_hu74886702b74109e0e47570a13776a29d_11763_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/reports/images/timeline-assertions_hu74886702b74109e0e47570a13776a29d_11763_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/reports/images/timeline-assertions_hu74886702b74109e0e47570a13776a29d_11763_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/reports/images/timeline-assertions_hu74886702b74109e0e47570a13776a29d_11763_500x0_resize_box_2.png 500w" width=366 height=86 alt="Timeline assertions">
+</a>
+<noscript><img class=img-fluid sizes=100vw srcset="https://beta.gatling.io/docs/user/reports/images/timeline-assertions_hu74886702b74109e0e47570a13776a29d_11763_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/reports/images/timeline-assertions_hu74886702b74109e0e47570a13776a29d_11763_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/reports/images/timeline-assertions_hu74886702b74109e0e47570a13776a29d_11763_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/reports/images/timeline-assertions_hu74886702b74109e0e47570a13776a29d_11763_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/reports/images/timeline-assertions_hu74886702b74109e0e47570a13776a29d_11763_500x0_resize_box_2.png 500w" src=https://beta.gatling.io/docs/user/reports/images/timeline-assertions.png width=366 height=86 alt="Timeline assertions"></noscript>
+</figure>
+<h3 id=tabs>Tabs<a href=#tabs class=anchor aria-hidden=true>#</a> </h3>
+<p>Below the navigator chart, there are tabs to switch charts.
+Each tab has the same structure except the summary that is available only for requests and groups tabs.</p>
+<figure>
+<a href=https://beta.gatling.io/docs/user/reports/images/tabs.png>
+<img class="img-fluid lazyload blur-up" data-sizes=auto src=https://beta.gatling.io/docs/user/reports/images/tabs_hu03ef5235083a92a4f79ea97595554f57_5727_20x0_resize_box_2.png data-srcset="https://beta.gatling.io/docs/user/reports/images/tabs_hu03ef5235083a92a4f79ea97595554f57_5727_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/reports/images/tabs_hu03ef5235083a92a4f79ea97595554f57_5727_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/reports/images/tabs_hu03ef5235083a92a4f79ea97595554f57_5727_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/reports/images/tabs_hu03ef5235083a92a4f79ea97595554f57_5727_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/reports/images/tabs_hu03ef5235083a92a4f79ea97595554f57_5727_500x0_resize_box_2.png 500w" width=1672 height=98 alt=Tabs>
+</a>
+<noscript><img class=img-fluid sizes=100vw srcset="https://beta.gatling.io/docs/user/reports/images/tabs_hu03ef5235083a92a4f79ea97595554f57_5727_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/reports/images/tabs_hu03ef5235083a92a4f79ea97595554f57_5727_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/reports/images/tabs_hu03ef5235083a92a4f79ea97595554f57_5727_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/reports/images/tabs_hu03ef5235083a92a4f79ea97595554f57_5727_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/reports/images/tabs_hu03ef5235083a92a4f79ea97595554f57_5727_500x0_resize_box_2.png 500w" src=https://beta.gatling.io/docs/user/reports/images/tabs.png width=1672 height=98 alt=Tabs></noscript>
+</figure>
+<h3 id=run-bar>Run Bar<a href=#run-bar class=anchor aria-hidden=true>#</a> </h3>
+<p>This bar is a combination of buttons:</p>
+<ul>
+<li><strong>Start / Abort</strong>: Use this button to start a new run of the simulation, or stop the ongoing run (not available if you have a Viewer permission)</li>
+<li><strong>Grafana</strong>: Link to the Grafana dashboard if you have filled in the configuration in frontline.conf</li>
+<li><strong>Generate public link</strong>: To create a public link</li>
+<li><strong>Switch to Summary</strong>: Switch to <a href=#summary-requests-and-groups-only>summary</a> view for Requests & Groups tabs</li>
+<li>buttons to filter the metrics drawn in the charts area</li>
+</ul>
+<figure>
+<a href=https://beta.gatling.io/docs/user/reports/images/run-bar.png>
+<img class="img-fluid lazyload blur-up" data-sizes=auto src=https://beta.gatling.io/docs/user/reports/images/run-bar_hue39209888db86da1a224fbabf27b71db_13130_20x0_resize_box_2.png data-srcset="https://beta.gatling.io/docs/user/reports/images/run-bar_hue39209888db86da1a224fbabf27b71db_13130_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/reports/images/run-bar_hue39209888db86da1a224fbabf27b71db_13130_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/reports/images/run-bar_hue39209888db86da1a224fbabf27b71db_13130_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/reports/images/run-bar_hue39209888db86da1a224fbabf27b71db_13130_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/reports/images/run-bar_hue39209888db86da1a224fbabf27b71db_13130_500x0_resize_box_2.png 500w" width=1859 height=47 alt="Run bar">
+</a>
+<noscript><img class=img-fluid sizes=100vw srcset="https://beta.gatling.io/docs/user/reports/images/run-bar_hue39209888db86da1a224fbabf27b71db_13130_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/reports/images/run-bar_hue39209888db86da1a224fbabf27b71db_13130_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/reports/images/run-bar_hue39209888db86da1a224fbabf27b71db_13130_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/reports/images/run-bar_hue39209888db86da1a224fbabf27b71db_13130_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/reports/images/run-bar_hue39209888db86da1a224fbabf27b71db_13130_500x0_resize_box_2.png 500w" src=https://beta.gatling.io/docs/user/reports/images/run-bar.png width=1859 height=47 alt="Run bar"></noscript>
+</figure>
+<h3 id=generate-public-links>Generate Public Links<a href=#generate-public-links class=anchor aria-hidden=true>#</a> </h3>
+<p>A public link is a link of the current reports which will be accessible to anyone, without having to log-in to FrontLine. To generate a public link, click on the <em>Generate public link</em> button and choose the expiration date of your link.</p>
+<figure>
+<a href=https://beta.gatling.io/docs/user/reports/images/generate-public-link.png>
+<img class="img-fluid lazyload blur-up" data-sizes=auto src=https://beta.gatling.io/docs/user/reports/images/generate-public-link_hu69e68841cff94914bf09668f6ac484e1_45737_20x0_resize_box_2.png data-srcset="https://beta.gatling.io/docs/user/reports/images/generate-public-link_hu69e68841cff94914bf09668f6ac484e1_45737_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/reports/images/generate-public-link_hu69e68841cff94914bf09668f6ac484e1_45737_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/reports/images/generate-public-link_hu69e68841cff94914bf09668f6ac484e1_45737_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/reports/images/generate-public-link_hu69e68841cff94914bf09668f6ac484e1_45737_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/reports/images/generate-public-link_hu69e68841cff94914bf09668f6ac484e1_45737_500x0_resize_box_2.png 500w" width=1033 height=631 alt="Generate public links">
+</a>
+<noscript><img class=img-fluid sizes=100vw srcset="https://beta.gatling.io/docs/user/reports/images/generate-public-link_hu69e68841cff94914bf09668f6ac484e1_45737_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/reports/images/generate-public-link_hu69e68841cff94914bf09668f6ac484e1_45737_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/reports/images/generate-public-link_hu69e68841cff94914bf09668f6ac484e1_45737_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/reports/images/generate-public-link_hu69e68841cff94914bf09668f6ac484e1_45737_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/reports/images/generate-public-link_hu69e68841cff94914bf09668f6ac484e1_45737_500x0_resize_box_2.png 500w" src=https://beta.gatling.io/docs/user/reports/images/generate-public-link.png width=1033 height=631 alt="Generate public links"></noscript>
+</figure>
+<p>The maximum allowed lifetime for a public link is 1 year.</p>
+<p>Once you have chosen an expiration date, you can proceed by clicking on the generate button.</p>
+<figure>
+<a href=https://beta.gatling.io/docs/user/reports/images/successful-generation-public-link.png>
+<img class="img-fluid lazyload blur-up" data-sizes=auto src=https://beta.gatling.io/docs/user/reports/images/successful-generation-public-link_huc820e07923a36d8e3ccd4893b4eda908_37534_20x0_resize_box_2.png data-srcset="https://beta.gatling.io/docs/user/reports/images/successful-generation-public-link_huc820e07923a36d8e3ccd4893b4eda908_37534_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/reports/images/successful-generation-public-link_huc820e07923a36d8e3ccd4893b4eda908_37534_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/reports/images/successful-generation-public-link_huc820e07923a36d8e3ccd4893b4eda908_37534_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/reports/images/successful-generation-public-link_huc820e07923a36d8e3ccd4893b4eda908_37534_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/reports/images/successful-generation-public-link_huc820e07923a36d8e3ccd4893b4eda908_37534_500x0_resize_box_2.png 500w" width=1037 height=377 alt="Successful public link generation">
+</a>
+<noscript><img class=img-fluid sizes=100vw srcset="https://beta.gatling.io/docs/user/reports/images/successful-generation-public-link_huc820e07923a36d8e3ccd4893b4eda908_37534_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/reports/images/successful-generation-public-link_huc820e07923a36d8e3ccd4893b4eda908_37534_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/reports/images/successful-generation-public-link_huc820e07923a36d8e3ccd4893b4eda908_37534_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/reports/images/successful-generation-public-link_huc820e07923a36d8e3ccd4893b4eda908_37534_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/reports/images/successful-generation-public-link_huc820e07923a36d8e3ccd4893b4eda908_37534_500x0_resize_box_2.png 500w" src=https://beta.gatling.io/docs/user/reports/images/successful-generation-public-link.png width=1037 height=377 alt="Successful public link generation"></noscript>
+</figure>
+<p>You can copy the public link to share your reports to non-FrontLine users, or click on the &ldquo;Go&rdquo; Button to access it yourself. You can click on the &ldquo;OK&rdquo; button to close this modal.</p>
+<h3 id=charts>Charts<a href=#charts class=anchor aria-hidden=true>#</a> </h3>
+<p>Each charts in FrontLine are connected to each other, so if you select a time window on a chart it will automatically change it
+for all other charts. Metrics are drawn in multiple charts.</p>
+<figure>
+<a href=https://beta.gatling.io/docs/user/reports/images/charts.png>
+<img class="img-fluid lazyload blur-up" data-sizes=auto src=https://beta.gatling.io/docs/user/reports/images/charts_hu11caa299024a10102fa530707b876730_102690_20x0_resize_box_2.png data-srcset="https://beta.gatling.io/docs/user/reports/images/charts_hu11caa299024a10102fa530707b876730_102690_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/reports/images/charts_hu11caa299024a10102fa530707b876730_102690_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/reports/images/charts_hu11caa299024a10102fa530707b876730_102690_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/reports/images/charts_hu11caa299024a10102fa530707b876730_102690_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/reports/images/charts_hu11caa299024a10102fa530707b876730_102690_500x0_resize_box_2.png 500w" width=1840 height=719 alt=Charts>
+</a>
+<noscript><img class=img-fluid sizes=100vw srcset="https://beta.gatling.io/docs/user/reports/images/charts_hu11caa299024a10102fa530707b876730_102690_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/reports/images/charts_hu11caa299024a10102fa530707b876730_102690_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/reports/images/charts_hu11caa299024a10102fa530707b876730_102690_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/reports/images/charts_hu11caa299024a10102fa530707b876730_102690_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/reports/images/charts_hu11caa299024a10102fa530707b876730_102690_500x0_resize_box_2.png 500w" src=https://beta.gatling.io/docs/user/reports/images/charts.png width=1840 height=719 alt=Charts></noscript>
+</figure>
+<p>Some of them have an icon to update the chart settings:</p>
+<figure>
+<a href=https://beta.gatling.io/docs/user/reports/images/distrib-chart.png>
+<img class="img-fluid lazyload blur-up" data-sizes=auto src=https://beta.gatling.io/docs/user/reports/images/distrib-chart_hue87933dd88e5df701758084a00027685_12876_20x0_resize_box_2.png data-srcset="https://beta.gatling.io/docs/user/reports/images/distrib-chart_hue87933dd88e5df701758084a00027685_12876_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/reports/images/distrib-chart_hue87933dd88e5df701758084a00027685_12876_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/reports/images/distrib-chart_hue87933dd88e5df701758084a00027685_12876_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/reports/images/distrib-chart_hue87933dd88e5df701758084a00027685_12876_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/reports/images/distrib-chart_hue87933dd88e5df701758084a00027685_12876_500x0_resize_box_2.png 500w" width=458 height=233 alt="Distribution chart">
+</a>
+<noscript><img class=img-fluid sizes=100vw srcset="https://beta.gatling.io/docs/user/reports/images/distrib-chart_hue87933dd88e5df701758084a00027685_12876_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/reports/images/distrib-chart_hue87933dd88e5df701758084a00027685_12876_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/reports/images/distrib-chart_hue87933dd88e5df701758084a00027685_12876_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/reports/images/distrib-chart_hue87933dd88e5df701758084a00027685_12876_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/reports/images/distrib-chart_hue87933dd88e5df701758084a00027685_12876_500x0_resize_box_2.png 500w" src=https://beta.gatling.io/docs/user/reports/images/distrib-chart.png width=458 height=233 alt="Distribution chart"></noscript>
+</figure>
+<p>Moreover, histograms and pies are hidden behind each counts charts, accessible by clicking their top right corner icon below.</p>
+<figure>
+<a href=https://beta.gatling.io/docs/user/reports/images/pie-button.png>
+<img class="img-fluid lazyload blur-up" data-sizes=auto src=https://beta.gatling.io/docs/user/reports/images/pie-button_hua082cad30dcc72b0686cbb7a82e64da6_1039_20x0_resize_box_2.png data-srcset="https://beta.gatling.io/docs/user/reports/images/pie-button_hua082cad30dcc72b0686cbb7a82e64da6_1039_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/reports/images/pie-button_hua082cad30dcc72b0686cbb7a82e64da6_1039_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/reports/images/pie-button_hua082cad30dcc72b0686cbb7a82e64da6_1039_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/reports/images/pie-button_hua082cad30dcc72b0686cbb7a82e64da6_1039_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/reports/images/pie-button_hua082cad30dcc72b0686cbb7a82e64da6_1039_500x0_resize_box_2.png 500w" width=54 height=31 alt="Pie button">
+</a>
+<noscript><img class=img-fluid sizes=100vw srcset="https://beta.gatling.io/docs/user/reports/images/pie-button_hua082cad30dcc72b0686cbb7a82e64da6_1039_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/reports/images/pie-button_hua082cad30dcc72b0686cbb7a82e64da6_1039_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/reports/images/pie-button_hua082cad30dcc72b0686cbb7a82e64da6_1039_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/reports/images/pie-button_hua082cad30dcc72b0686cbb7a82e64da6_1039_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/reports/images/pie-button_hua082cad30dcc72b0686cbb7a82e64da6_1039_500x0_resize_box_2.png 500w" src=https://beta.gatling.io/docs/user/reports/images/pie-button.png width=54 height=31 alt="Pie button"></noscript>
+</figure>
+<div class="alert alert-warning d-flex" role=alert>
+<div class="flex-shrink-1 alert-icon">&#9888;&#xfe0f;</div>
+<div class=w-100>If your kernel version is too low (around below 3.10) you might not be able to get data from the TCP connection by state graph on the Connections tab. If you want to be able to get these data, you should upgrade your kernel.</div>
+</div>
+<h3 id=summary-requests-and-groups-only>Summary (Requests and Groups only)<a href=#summary-requests-and-groups-only class=anchor aria-hidden=true>#</a> </h3>
+<p>This view is available only from requests and groups tabs.
+It is a summary of metrics drawn in the charts, and has two modes: flat, by default, and hierarchy.
+The summary is also connected to the timeline and the time window selected, so if you change the time window the summary
+will refresh his data to match the time window.</p>
+<p>On Flat mode you can filter the data by clicking any column name of the table.</p>
+<figure>
+<a href=https://beta.gatling.io/docs/user/reports/images/summary.png>
+<img class="img-fluid lazyload blur-up" data-sizes=auto src=https://beta.gatling.io/docs/user/reports/images/summary_hu2a55343cb8e8be153a5116f3a221782a_46694_20x0_resize_box_2.png data-srcset="https://beta.gatling.io/docs/user/reports/images/summary_hu2a55343cb8e8be153a5116f3a221782a_46694_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/reports/images/summary_hu2a55343cb8e8be153a5116f3a221782a_46694_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/reports/images/summary_hu2a55343cb8e8be153a5116f3a221782a_46694_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/reports/images/summary_hu2a55343cb8e8be153a5116f3a221782a_46694_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/reports/images/summary_hu2a55343cb8e8be153a5116f3a221782a_46694_500x0_resize_box_2.png 500w" width=1850 height=326 alt=Summary>
+</a>
+<noscript><img class=img-fluid sizes=100vw srcset="https://beta.gatling.io/docs/user/reports/images/summary_hu2a55343cb8e8be153a5116f3a221782a_46694_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/reports/images/summary_hu2a55343cb8e8be153a5116f3a221782a_46694_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/reports/images/summary_hu2a55343cb8e8be153a5116f3a221782a_46694_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/reports/images/summary_hu2a55343cb8e8be153a5116f3a221782a_46694_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/reports/images/summary_hu2a55343cb8e8be153a5116f3a221782a_46694_500x0_resize_box_2.png 500w" src=https://beta.gatling.io/docs/user/reports/images/summary.png width=1850 height=326 alt=Summary></noscript>
+</figure>
+<h3 id=export-pdf>Export PDF<a href=#export-pdf class=anchor aria-hidden=true>#</a> </h3>
+<p>When clicking on the green button in the navigation bar, you will have access to a page where you can configure and then export a PDF report of a specific simulation.</p>
+<figure>
+<a href=https://beta.gatling.io/docs/user/reports/images/export-button.png>
+<img class="img-fluid lazyload blur-up" data-sizes=auto src=https://beta.gatling.io/docs/user/reports/images/export-button_hufe76b8904fbc7d133d5ddca4ce860576_24224_20x0_resize_box_2.png data-srcset="https://beta.gatling.io/docs/user/reports/images/export-button_hufe76b8904fbc7d133d5ddca4ce860576_24224_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/reports/images/export-button_hufe76b8904fbc7d133d5ddca4ce860576_24224_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/reports/images/export-button_hufe76b8904fbc7d133d5ddca4ce860576_24224_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/reports/images/export-button_hufe76b8904fbc7d133d5ddca4ce860576_24224_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/reports/images/export-button_hufe76b8904fbc7d133d5ddca4ce860576_24224_500x0_resize_box_2.png 500w" width=1176 height=92 alt="Export button">
+</a>
+<noscript><img class=img-fluid sizes=100vw srcset="https://beta.gatling.io/docs/user/reports/images/export-button_hufe76b8904fbc7d133d5ddca4ce860576_24224_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/reports/images/export-button_hufe76b8904fbc7d133d5ddca4ce860576_24224_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/reports/images/export-button_hufe76b8904fbc7d133d5ddca4ce860576_24224_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/reports/images/export-button_hufe76b8904fbc7d133d5ddca4ce860576_24224_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/reports/images/export-button_hufe76b8904fbc7d133d5ddca4ce860576_24224_500x0_resize_box_2.png 500w" src=https://beta.gatling.io/docs/user/reports/images/export-button.png width=1176 height=92 alt="Export button"></noscript>
+</figure>
+<p>This report is initialized with:</p>
+<ul>
+<li>a title element with the date of the run you were coming from</li>
+<li>the run status</li>
+<li>the run comments</li>
+<li>the run assertions</li>
+<li>the run requests summary</li>
+<li>3 charts of the run:</li>
+</ul>
+<ul>
+<li>Requests and Responses per second</li>
+<li>Responses per Second by Status</li>
+<li>Response Time Percentiles</li>
+</ul>
+<figure>
+<a href=https://beta.gatling.io/docs/user/reports/images/export-page.png>
+<img class="img-fluid lazyload blur-up" data-sizes=auto src=https://beta.gatling.io/docs/user/reports/images/export-page_hu8aa3fea90b22f5bcb7fc014cd5ab3883_51184_20x0_resize_box_2.png data-srcset="https://beta.gatling.io/docs/user/reports/images/export-page_hu8aa3fea90b22f5bcb7fc014cd5ab3883_51184_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/reports/images/export-page_hu8aa3fea90b22f5bcb7fc014cd5ab3883_51184_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/reports/images/export-page_hu8aa3fea90b22f5bcb7fc014cd5ab3883_51184_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/reports/images/export-page_hu8aa3fea90b22f5bcb7fc014cd5ab3883_51184_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/reports/images/export-page_hu8aa3fea90b22f5bcb7fc014cd5ab3883_51184_500x0_resize_box_2.png 500w" width=1860 height=870 alt="Export page">
+</a>
+<noscript><img class=img-fluid sizes=100vw srcset="https://beta.gatling.io/docs/user/reports/images/export-page_hu8aa3fea90b22f5bcb7fc014cd5ab3883_51184_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/reports/images/export-page_hu8aa3fea90b22f5bcb7fc014cd5ab3883_51184_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/reports/images/export-page_hu8aa3fea90b22f5bcb7fc014cd5ab3883_51184_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/reports/images/export-page_hu8aa3fea90b22f5bcb7fc014cd5ab3883_51184_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/reports/images/export-page_hu8aa3fea90b22f5bcb7fc014cd5ab3883_51184_500x0_resize_box_2.png 500w" src=https://beta.gatling.io/docs/user/reports/images/export-page.png width=1860 height=870 alt="Export page"></noscript>
+</figure>
+<p>This page is a configurable list of different elements that will be displayed in the report. You can click on the blue add button under every element
+to add another one.</p>
+<p>Every element can be moved up or down by clicking on the blue arrow on the top right of the element, or be removed by clicking on the red dash.</p>
+<p>Those elements are composed of:</p>
+<ul>
+<li><strong>Title</strong>: add a title element.</li>
+<li><strong>Text Area</strong>: add an editable text element.</li>
+<li><strong>New Page</strong>: allow you to skip a page in the report.</li>
+<li><strong>Run</strong>:</li>
+</ul>
+<ul>
+<li><strong>Status</strong>: add an editable text element with a predefined text set to the status of the selected run.</li>
+<li><strong>Comments</strong>: add an editable text element with a predefined text set to the comments of the selected run.</li>
+<li><strong>Assertions</strong>: add a table with the assertions of the selected run.</li>
+<li><strong>Summary</strong>: add the summary table of the selected run in a new landscape page.</li>
+</ul>
+<ul>
+<li><strong>Chart</strong>: add a chart element that you can interact with before exporting it to PDF.</li>
+<li><strong>Counts</strong>: add a count chart element that you can interact with before exporting it to PDF.</li>
+</ul>
+<p>As you can see below, every charts (or other elements) can be interact with individually. You can zoom on it, or select the run, the scenario,
+the group, etc.. whose you want your data to be fetch. You do not need to have the same settings for each element.</p>
+<figure>
+<a href=https://beta.gatling.io/docs/user/reports/images/export-charts.png>
+<img class="img-fluid lazyload blur-up" data-sizes=auto src=https://beta.gatling.io/docs/user/reports/images/export-charts_hu412105d9af79468a0f18238616bca6ed_144929_20x0_resize_box_2.png data-srcset="https://beta.gatling.io/docs/user/reports/images/export-charts_hu412105d9af79468a0f18238616bca6ed_144929_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/reports/images/export-charts_hu412105d9af79468a0f18238616bca6ed_144929_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/reports/images/export-charts_hu412105d9af79468a0f18238616bca6ed_144929_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/reports/images/export-charts_hu412105d9af79468a0f18238616bca6ed_144929_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/reports/images/export-charts_hu412105d9af79468a0f18238616bca6ed_144929_500x0_resize_box_2.png 500w" width=1141 height=773 alt="Export charts">
+</a>
+<noscript><img class=img-fluid sizes=100vw srcset="https://beta.gatling.io/docs/user/reports/images/export-charts_hu412105d9af79468a0f18238616bca6ed_144929_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/reports/images/export-charts_hu412105d9af79468a0f18238616bca6ed_144929_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/reports/images/export-charts_hu412105d9af79468a0f18238616bca6ed_144929_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/reports/images/export-charts_hu412105d9af79468a0f18238616bca6ed_144929_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/reports/images/export-charts_hu412105d9af79468a0f18238616bca6ed_144929_500x0_resize_box_2.png 500w" src=https://beta.gatling.io/docs/user/reports/images/export-charts.png width=1141 height=773 alt="Export charts"></noscript>
+</figure>
+<p>After adding all desired elements in the report you can click on the <em>Export PDF</em> button on the top right to get your PDF file.</p>
+<figure>
+<a href=https://beta.gatling.io/docs/user/reports/images/export-actions.png>
+<img class="img-fluid lazyload blur-up" data-sizes=auto src=https://beta.gatling.io/docs/user/reports/images/export-actions_hu33a8daed9c2caef2b6f1cd7b790b9d64_25205_20x0_resize_box_2.png data-srcset="https://beta.gatling.io/docs/user/reports/images/export-actions_hu33a8daed9c2caef2b6f1cd7b790b9d64_25205_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/reports/images/export-actions_hu33a8daed9c2caef2b6f1cd7b790b9d64_25205_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/reports/images/export-actions_hu33a8daed9c2caef2b6f1cd7b790b9d64_25205_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/reports/images/export-actions_hu33a8daed9c2caef2b6f1cd7b790b9d64_25205_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/reports/images/export-actions_hu33a8daed9c2caef2b6f1cd7b790b9d64_25205_500x0_resize_box_2.png 500w" width=464 height=212 alt="Export actions">
+</a>
+<noscript><img class=img-fluid sizes=100vw srcset="https://beta.gatling.io/docs/user/reports/images/export-actions_hu33a8daed9c2caef2b6f1cd7b790b9d64_25205_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/reports/images/export-actions_hu33a8daed9c2caef2b6f1cd7b790b9d64_25205_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/reports/images/export-actions_hu33a8daed9c2caef2b6f1cd7b790b9d64_25205_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/reports/images/export-actions_hu33a8daed9c2caef2b6f1cd7b790b9d64_25205_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/reports/images/export-actions_hu33a8daed9c2caef2b6f1cd7b790b9d64_25205_500x0_resize_box_2.png 500w" src=https://beta.gatling.io/docs/user/reports/images/export-actions.png width=464 height=212 alt="Export actions"></noscript>
+</figure>
+<p>There are two more actions you can do:</p>
+<ul>
+<li><strong>Save</strong>: save the current Export configuration:
+<ul>
+<li><strong>as a template</strong>: this option will save the element list without the content</li>
+<li><strong>as a save</strong>: this option will save everything, including the content of the Text Area and the configuration of the graphs</li>
+</ul>
+</li>
+<li><strong>Load</strong>: load a previously saved template or save.</li>
+</ul>
+<h3 id=useful-tips>Useful Tips<a href=#useful-tips class=anchor aria-hidden=true>#</a> </h3>
+<h3 id=zoom>Zoom<a href=#zoom class=anchor aria-hidden=true>#</a> </h3>
+<p>You can reset zoom by double clicking on a chart.
+It is possible to change the time range window by the following actions:</p>
+<ul>
+<li>Clicking zoom icons of the control buttons</li>
+<li>Select a zone in any charts and timeline</li>
+<li>Select a range time from the top navigation bar</li>
+</ul>
+<h3 id=markers>Markers<a href=#markers class=anchor aria-hidden=true>#</a> </h3>
+<p>To ease your analysis, you can create markers on all the charts by right clicking on them. And click on the top of the marker to delete it.</p>
+<figure>
+<a href=https://beta.gatling.io/docs/user/reports/images/marker.png>
+<img class="img-fluid lazyload blur-up" data-sizes=auto src=https://beta.gatling.io/docs/user/reports/images/marker_huafe35735ba8d1ba0a1679516f1fd5c9f_74404_20x0_resize_box_2.png data-srcset="https://beta.gatling.io/docs/user/reports/images/marker_huafe35735ba8d1ba0a1679516f1fd5c9f_74404_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/reports/images/marker_huafe35735ba8d1ba0a1679516f1fd5c9f_74404_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/reports/images/marker_huafe35735ba8d1ba0a1679516f1fd5c9f_74404_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/reports/images/marker_huafe35735ba8d1ba0a1679516f1fd5c9f_74404_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/reports/images/marker_huafe35735ba8d1ba0a1679516f1fd5c9f_74404_500x0_resize_box_2.png 500w" width=922 height=478 alt=Marker>
+</a>
+<noscript><img class=img-fluid sizes=100vw srcset="https://beta.gatling.io/docs/user/reports/images/marker_huafe35735ba8d1ba0a1679516f1fd5c9f_74404_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/reports/images/marker_huafe35735ba8d1ba0a1679516f1fd5c9f_74404_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/reports/images/marker_huafe35735ba8d1ba0a1679516f1fd5c9f_74404_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/reports/images/marker_huafe35735ba8d1ba0a1679516f1fd5c9f_74404_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/reports/images/marker_huafe35735ba8d1ba0a1679516f1fd5c9f_74404_500x0_resize_box_2.png 500w" src=https://beta.gatling.io/docs/user/reports/images/marker.png width=922 height=478 alt=Marker></noscript>
+</figure>
+<h3 id=multiple-highlights>Multiple Highlights<a href=#multiple-highlights class=anchor aria-hidden=true>#</a> </h3>
+<p>In the top right menu, you can activate the <em>Multiple Highlights</em> setting which allows the tooltip to be displayed on every chart at the same time.</p>
+<p><figure>
+<a href=https://beta.gatling.io/docs/user/reports/images/multiplecheck.png>
+<img class="img-fluid lazyload blur-up" data-sizes=auto src=https://beta.gatling.io/docs/user/reports/images/multiplecheck_hu887d4c16b983ac4e435f2e776dad729d_43165_20x0_resize_box_2.png data-srcset="https://beta.gatling.io/docs/user/reports/images/multiplecheck_hu887d4c16b983ac4e435f2e776dad729d_43165_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/reports/images/multiplecheck_hu887d4c16b983ac4e435f2e776dad729d_43165_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/reports/images/multiplecheck_hu887d4c16b983ac4e435f2e776dad729d_43165_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/reports/images/multiplecheck_hu887d4c16b983ac4e435f2e776dad729d_43165_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/reports/images/multiplecheck_hu887d4c16b983ac4e435f2e776dad729d_43165_500x0_resize_box_2.png 500w" width=928 height=228 alt="Multiple check">
+</a>
+<noscript><img class=img-fluid sizes=100vw srcset="https://beta.gatling.io/docs/user/reports/images/multiplecheck_hu887d4c16b983ac4e435f2e776dad729d_43165_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/reports/images/multiplecheck_hu887d4c16b983ac4e435f2e776dad729d_43165_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/reports/images/multiplecheck_hu887d4c16b983ac4e435f2e776dad729d_43165_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/reports/images/multiplecheck_hu887d4c16b983ac4e435f2e776dad729d_43165_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/reports/images/multiplecheck_hu887d4c16b983ac4e435f2e776dad729d_43165_500x0_resize_box_2.png 500w" src=https://beta.gatling.io/docs/user/reports/images/multiplecheck.png width=928 height=228 alt="Multiple check"></noscript>
+</figure>
+<figure>
+<a href=https://beta.gatling.io/docs/user/reports/images/multiple.png>
+<img class="img-fluid lazyload blur-up" data-sizes=auto src=https://beta.gatling.io/docs/user/reports/images/multiple_huead63230e6f51466e1364fd6ff733ea2_362604_20x0_resize_box_2.png data-srcset="https://beta.gatling.io/docs/user/reports/images/multiple_huead63230e6f51466e1364fd6ff733ea2_362604_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/reports/images/multiple_huead63230e6f51466e1364fd6ff733ea2_362604_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/reports/images/multiple_huead63230e6f51466e1364fd6ff733ea2_362604_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/reports/images/multiple_huead63230e6f51466e1364fd6ff733ea2_362604_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/reports/images/multiple_huead63230e6f51466e1364fd6ff733ea2_362604_500x0_resize_box_2.png 500w" width=2240 height=1150 alt=Multiple>
+</a>
+<noscript><img class=img-fluid sizes=100vw srcset="https://beta.gatling.io/docs/user/reports/images/multiple_huead63230e6f51466e1364fd6ff733ea2_362604_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/reports/images/multiple_huead63230e6f51466e1364fd6ff733ea2_362604_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/reports/images/multiple_huead63230e6f51466e1364fd6ff733ea2_362604_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/reports/images/multiple_huead63230e6f51466e1364fd6ff733ea2_362604_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/reports/images/multiple_huead63230e6f51466e1364fd6ff733ea2_362604_500x0_resize_box_2.png 500w" src=https://beta.gatling.io/docs/user/reports/images/multiple.png width=2240 height=1150 alt=Multiple></noscript>
+</figure>
+</p>
+<h3 id=percentiles-mask>Percentiles Mask<a href=#percentiles-mask class=anchor aria-hidden=true>#</a> </h3>
+<p>In the top right menu, you can click on the <strong>Percentiles</strong> setting to be able to chose what percentiles to display in the chart.</p>
+<p><figure>
+<a href=https://beta.gatling.io/docs/user/reports/images/percentilesmask.png>
+<img class="img-fluid lazyload blur-up" data-sizes=auto src=https://beta.gatling.io/docs/user/reports/images/percentilesmask_hu56cff3b14ec7f30c1d93cb62ad213640_12815_20x0_resize_box_2.png data-srcset="https://beta.gatling.io/docs/user/reports/images/percentilesmask_hu56cff3b14ec7f30c1d93cb62ad213640_12815_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/reports/images/percentilesmask_hu56cff3b14ec7f30c1d93cb62ad213640_12815_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/reports/images/percentilesmask_hu56cff3b14ec7f30c1d93cb62ad213640_12815_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/reports/images/percentilesmask_hu56cff3b14ec7f30c1d93cb62ad213640_12815_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/reports/images/percentilesmask_hu56cff3b14ec7f30c1d93cb62ad213640_12815_500x0_resize_box_2.png 500w" width=701 height=215 alt="Percentiles mask">
+</a>
+<noscript><img class=img-fluid sizes=100vw srcset="https://beta.gatling.io/docs/user/reports/images/percentilesmask_hu56cff3b14ec7f30c1d93cb62ad213640_12815_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/reports/images/percentilesmask_hu56cff3b14ec7f30c1d93cb62ad213640_12815_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/reports/images/percentilesmask_hu56cff3b14ec7f30c1d93cb62ad213640_12815_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/reports/images/percentilesmask_hu56cff3b14ec7f30c1d93cb62ad213640_12815_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/reports/images/percentilesmask_hu56cff3b14ec7f30c1d93cb62ad213640_12815_500x0_resize_box_2.png 500w" src=https://beta.gatling.io/docs/user/reports/images/percentilesmask.png width=701 height=215 alt="Percentiles mask"></noscript>
+</figure>
+<figure>
+<a href=https://beta.gatling.io/docs/user/reports/images/percentileschart.png>
+<img class="img-fluid lazyload blur-up" data-sizes=auto src=https://beta.gatling.io/docs/user/reports/images/percentileschart_hu83f9547b76cea0a9809fa22895a69aac_54072_20x0_resize_box_2.png data-srcset="https://beta.gatling.io/docs/user/reports/images/percentileschart_hu83f9547b76cea0a9809fa22895a69aac_54072_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/reports/images/percentileschart_hu83f9547b76cea0a9809fa22895a69aac_54072_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/reports/images/percentileschart_hu83f9547b76cea0a9809fa22895a69aac_54072_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/reports/images/percentileschart_hu83f9547b76cea0a9809fa22895a69aac_54072_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/reports/images/percentileschart_hu83f9547b76cea0a9809fa22895a69aac_54072_500x0_resize_box_2.png 500w" width=923 height=242 alt="Percentiles chart">
+</a>
+<noscript><img class=img-fluid sizes=100vw srcset="https://beta.gatling.io/docs/user/reports/images/percentileschart_hu83f9547b76cea0a9809fa22895a69aac_54072_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/reports/images/percentileschart_hu83f9547b76cea0a9809fa22895a69aac_54072_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/reports/images/percentileschart_hu83f9547b76cea0a9809fa22895a69aac_54072_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/reports/images/percentileschart_hu83f9547b76cea0a9809fa22895a69aac_54072_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/reports/images/percentileschart_hu83f9547b76cea0a9809fa22895a69aac_54072_500x0_resize_box_2.png 500w" src=https://beta.gatling.io/docs/user/reports/images/percentileschart.png width=923 height=242 alt="Percentiles chart"></noscript>
+</figure>
+</p>
+<h3 id=date-time--elapsed-time>Date Time / Elapsed Time<a href=#date-time--elapsed-time class=anchor aria-hidden=true>#</a> </h3>
+<p>In the top right menu, you can activate the <strong>Date Time</strong> setting to be able to switch from elapsed time to date time.</p>
+<h3 id=highlight-legend>Highlight Legend<a href=#highlight-legend class=anchor aria-hidden=true>#</a> </h3>
+<p>By hovering the label on the percentiles chart legend, you will be able to highlight the curve on the chart, leading to a better view of that curve.
+The highlight legend options is enable to every &ldquo;non stacked&rdquo; graph.</p>
+<figure>
+<a href=https://beta.gatling.io/docs/user/reports/images/highlightchart.png>
+<img class="img-fluid lazyload blur-up" data-sizes=auto src=https://beta.gatling.io/docs/user/reports/images/highlightchart_hud1cbcdb1aa60ca6c34cb4d2dae172c6b_52130_20x0_resize_box_2.png data-srcset="https://beta.gatling.io/docs/user/reports/images/highlightchart_hud1cbcdb1aa60ca6c34cb4d2dae172c6b_52130_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/reports/images/highlightchart_hud1cbcdb1aa60ca6c34cb4d2dae172c6b_52130_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/reports/images/highlightchart_hud1cbcdb1aa60ca6c34cb4d2dae172c6b_52130_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/reports/images/highlightchart_hud1cbcdb1aa60ca6c34cb4d2dae172c6b_52130_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/reports/images/highlightchart_hud1cbcdb1aa60ca6c34cb4d2dae172c6b_52130_500x0_resize_box_2.png 500w" width=826 height=212 alt="Highlight chart">
+</a>
+<noscript><img class=img-fluid sizes=100vw srcset="https://beta.gatling.io/docs/user/reports/images/highlightchart_hud1cbcdb1aa60ca6c34cb4d2dae172c6b_52130_900x0_resize_box_2.png 900w,https://beta.gatling.io/docs/user/reports/images/highlightchart_hud1cbcdb1aa60ca6c34cb4d2dae172c6b_52130_800x0_resize_box_2.png 800w,https://beta.gatling.io/docs/user/reports/images/highlightchart_hud1cbcdb1aa60ca6c34cb4d2dae172c6b_52130_700x0_resize_box_2.png 700w,https://beta.gatling.io/docs/user/reports/images/highlightchart_hud1cbcdb1aa60ca6c34cb4d2dae172c6b_52130_600x0_resize_box_2.png 600w,https://beta.gatling.io/docs/user/reports/images/highlightchart_hud1cbcdb1aa60ca6c34cb4d2dae172c6b_52130_500x0_resize_box_2.png 500w" src=https://beta.gatling.io/docs/user/reports/images/highlightchart.png width=826 height=212 alt="Highlight chart"></noscript>
+</figure>
+<p class=edit-page><a href=https://github.com/gatling/frontline-cloud-doc/blob/main/content/docs/user/reports/index.md><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-2"><path d="M17 3a2.828 2.828.0 114 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg>Edit this page on GitHub</a></p>
+<div class="docs-navigation d-flex justify-content-between">
+<a href=https://beta.gatling.io/docs/user/trends/>
+<div class="card my-1">
+<div class="card-body py-2">
+&larr; Trends
+</div>
+</div>
+</a>
+<a class=ms-auto href=https://beta.gatling.io/docs/user/api/>
+<div class="card my-1">
+<div class="card-body py-2">
+Public APIs &rarr;
+</div>
+</div>
+</a>
+</div>
+</main>
+</div>
+</div>
+</div>
+<footer class="footer text-muted">
+<div class=container>
+<div class=row>
+<div class="col-lg-8 order-last order-lg-first">
+<ul class=list-inline>
+<li class=list-inline-item>Powered by <a href=https://gohugo.io/>Hugo</a>, and <a href=https://getdoks.org/>Doks</a></li>
+</ul>
+</div>
+<div class="col-lg-8 order-first order-lg-last text-lg-end">
+<ul class=list-inline>
+</ul>
+</div>
+</div>
+</div>
+</footer>
+<script src=https://beta.gatling.io/main.min.208c3b7c67e3d3080c9bc3050c47ee38a15be3ce9a0572fe4c715b0bbd66401474ab787ed4edf2cc0e33bf6c673f9ba13d42224094560e40807767016fcc2deb.js integrity="sha512-IIw7fGfj0wgMm8MFDEfuOKFb486aBXL+THFbC71mQBR0q3h+1O3yzA4zv2xnP5uhPUIiQJRWDkCAd2cBb8wt6w==" crossorigin=anonymous defer></script>
+<script src=https://beta.gatling.io/index.min.afb0e63d0c6a8c50883448405d7d099d2326f9541904c91670fbd00bb508e18e0f28cc3ba1ff73aabd19cce79f1cb8691918c6622b7ce53d45e10de5f50cdffa.js integrity="sha512-r7DmPQxqjFCINEhAXX0JnSMm+VQZBMkWcPvQC7UI4Y4PKMw7of9zqr0ZzOefHLhpGRjGYit85T1F4Q3l9Qzf+g==" crossorigin=anonymous defer></script>
+</body>
+</html>

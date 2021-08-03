@@ -62,11 +62,11 @@ statuses=(
   [11]="Broken"
   [12]="Deployment failed"
   [13]="Invalid license"
-  [15]="Abort requested"
+  [15]="Stop requested"
 )
 
 #Check params
-command -v jq >/dev/null 2>&1 || { echo >&2 "Please install jq to use this script: https://stedolan.github.io/jq/download/.  Aborting."; exit 1; }
+command -v jq >/dev/null 2>&1 || { echo >&2 "Please install jq to use this script: https://stedolan.github.io/jq/download/.  Stopping."; exit 1; }
 checkParameter frontLineUrl $1
 checkParameter apiToken $2
 checkParameter simulationId $3
